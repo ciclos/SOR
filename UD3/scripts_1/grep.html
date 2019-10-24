@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>grep | Scripts en Bash Shell </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Diego Cordoba Aguirre" />
+<meta name="generator" content="eXeLearning  - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+<body class="exe-web-site" id="exe-node-4"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">Scripts en Bash Shell</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Scripts en Bash Shell</a></li>
+   <li><a href="estructura_mnima.html" class="no-ch">Estructura mínima</a></li>
+   <li><a href="parametros.html" class="no-ch">Parametros</a></li>
+   <li><a href="redireccin.html" class="no-ch">Redirección</a></li>
+   <li class="current-page-parent"><a href="comandos_utiles.html" class="current-page-parent daddy">Comandos utiles</a>
+   <ul>
+      <li id="active"><a href="grep.html" class="active no-ch">grep</a></li>
+   </ul>
+   </li>
+   <li><a href="variables.html" class="no-ch">Variables</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="comandos_utiles.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="variables.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">grep</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id3">
+<div class="iDevice emphasis0" >
+<div id="ta3_51_2" class="block iDevice_content">
+<div class="exe-text"><p>El comando grep busca dentro de un archivo las líneas que contengan el patrón que se le indica por parámetros.</p>
+<p><strong>Ejemplos</strong></p>
+<ul>
+<li>grep "ejemplo" * listara las lineas que concuerden con la cadena ejemplo de "todos" los archivos del directorio actual.<br /></li>
+<li>grep ‐i hola pp.txt considera idénticas las mayúsculas y minúscula en la cadena de búsqueda hola. (hola=HOLA=Hola=etc.).<br /></li>
+<li>grep ‐ri "hola" ./ busca en los archivos del directorio actual y los subdirectorios la palabra hola.<br /></li>
+<li>grep ‐v hola pp.txt lista las líneas que no contengan la cadena hola del archivo pp.txt<br /></li>
+<li>grep ‐n hola pp.txt las líneas concordantes con la cadena hola del archivo pp.txt se mostrarán acompañadas del número de línea.<br /></li>
+<li>grep ‐w sobre pp.txt listara solamente aquellas líneas que contienen concordancias que forman palabras completas.<br /></li>
+<li>grep [123] pp.txt listara las lineas que contengan los números 1, 2 o 3<br /></li>
+<li>grep '^L' pp.txt lista las lineas de pp.txt que comiencen la línea con el carácter L, el carácter ^ denota inicio de cadena.<br /></li>
+<li>grep 'h$' pp.txt lista las líneas de pp.txt que terminen en h, el carácter $ denota fin de cadena.</li>
+</ul></div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper activityIdevice em_iDevice" id="id7">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Actividad</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta7_50_2" class="block iDevice_content">
+<ol style="text-align: justify;">
+<li>Crea un script que muestre todos los archivos de un determinado usuario, listado desde el directorio en que se encuentra el script. Crea una estructura de directorios de prueba si es necesario.</li>
+<li>Crea un script que muestre todos los archivos de un determinado usuario, listado desde el directorio raiz.</li>
+<li>Crea un script que muestre todos los archivos de un determinado usuario, listado desde el directorio raiz y los permisos que tienen esos archivos. ( Consulta el manual de ls para saber como listarlo todo desde la raiz)</li>
+<li>Crea un script que muestre todos los archivos de un determinado usuario introducido por parametros, listado desde el directorio raiz y los permisos que tienen esos archivos.</li>
+<li>Crea un script que muestre todos los archivos de dos usuarios.</li>
+<li>Crea un script que muestre todos los archivos de varios usuarios introducidos por parametros, desde el directorio raiz y mostrando los permisos. Ten cuidado de introducir exactamente la cantidad de parametros que necesites, porque si falta alguno grep tomará el espacio como un patrón de busqueda.</li>
+<li>Crea un script que mande un ping de un solo eco a todas las IPs de la red y que guarde en un archivo una línea por cada equipo que responda al ping. En esa linea debe aparecer la IP del host que responde.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="comandos_utiles.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="variables.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

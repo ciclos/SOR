@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Parametros | Scripts en Bash Shell </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Diego Cordoba Aguirre" />
+<meta name="generator" content="eXeLearning  - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+<body class="exe-web-site" id="exe-node-5"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">Scripts en Bash Shell</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Scripts en Bash Shell</a></li>
+   <li><a href="estructura_mnima.html" class="no-ch">Estructura mínima</a></li>
+   <li id="active"><a href="parametros.html" class="active no-ch">Parametros</a></li>
+   <li><a href="redireccin.html" class="no-ch">Redirección</a></li>
+   <li><a href="comandos_utiles.html" class="daddy">Comandos utiles</a>
+   <ul class="other-section">
+      <li><a href="grep.html" class="no-ch">grep</a></li>
+   </ul>
+   </li>
+   <li><a href="variables.html" class="no-ch">Variables</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="estructura_mnima.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="redireccin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Parametros</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id4">
+<div class="iDevice emphasis0">
+<div id="ta4_85" class="block iDevice_content">
+<p>Los parámetros posicionales o argumentos son valores que acompañan a la invocación del comando y que permiten darle datos de entrada al comando para que trabaje con ellos. Por ejemplo, podemos usar el comando para listar el contenido de un directorio sin parametros:</p>
+<p><img src="parametros-1.png" alt="" width="532" height="45" /></p>
+<p>o con parametros:</p>
+<p><img src="parametros-2.png" alt="" width="567" height="121" /></p>
+<p>Nuestros script pueden tener parametros. Podemos acceder a ellos mediante sus nombres, que son: $1, $2, $3, ... Como ves lo que se indica es la posición del parametro, pues los parametros se ponen detras del nombre del script, como una lista separada por espacios. Es decir, si tuvieramos un script llamado ejemplo2.sh, con el siguiente contenido:</p>
+<p><img src="parametros-3.png" alt="" width="494" height="66" /></p>
+<p>Podriamos invocar el script de la siguiente forma:</p>
+<p><img src="parametros-4.png" alt="" width="582" height="33" /></p>
+<p>Como puedes ver la frase va entre comillas dobles. Esto es porque, como hemos dicho, los parametros se separan por espacios, si no ponemos las comillas el sistema pensara que cada palabra es un parametro. Mira lo que pasa si no ponemos las comillas:</p>
+<p><img src="parametros-5.png" alt="" width="573" height="34" /></p>
+<p>Si modificamos el código de la siguiente forma:</p>
+<p><img src="parametros-6.png" alt="" width="493" height="62" /></p>
+<p>Y lo invocamos sin comillas. Observa la salida:</p>
+<p><img src="parametros-7.png" alt="" width="567" height="36" /></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper activityIdevice em_iDevice" id="id5">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Actividad</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta5_48_2" class="block iDevice_content">
+<ol>
+<li>Crea un script que coja por parametros una frase y la muestre desordenada.</li>
+<li>Modifica el anterior para que primero se muestre la frase introducida y en la siguiente línea desordenada.</li>
+<li>Vuelve a modificar el anterior para que además antes de cada frase salga una indicación diciendo cual es cada una. Por ejemplo: <br /><em>Frase ordenada: Hola, esta la ordenada.</em><br /><em>Frase desordenada: esta Hola, ordenada la</em></li>
+<li>Crea un script que muestre por pantalla los parametros introducidos, indicando delante de cada uno cual es su posición.</li>
+</ol>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="estructura_mnima.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="redireccin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

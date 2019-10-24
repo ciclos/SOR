@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Estructura mínima | Scripts en Bash Shell </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Diego Cordoba Aguirre" />
+<meta name="generator" content="eXeLearning  - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+<body class="exe-web-site" id="exe-node-1"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">Scripts en Bash Shell</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Scripts en Bash Shell</a></li>
+   <li id="active"><a href="estructura_mnima.html" class="active no-ch">Estructura mínima</a></li>
+   <li><a href="parametros.html" class="no-ch">Parametros</a></li>
+   <li><a href="redireccin.html" class="no-ch">Redirección</a></li>
+   <li><a href="comandos_utiles.html" class="daddy">Comandos utiles</a>
+   <ul class="other-section">
+      <li><a href="grep.html" class="no-ch">grep</a></li>
+   </ul>
+   </li>
+   <li><a href="variables.html" class="no-ch">Variables</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="index.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="parametros.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Estructura mínima</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id1">
+<div class="iDevice emphasis0">
+<div id="ta1_85" class="block iDevice_content">
+<p style="text-align: justify;">Por norma general todos los sistemas Linux suelen incluir el editor vim ( o el vi en su defecto ) con el que podemos editar archivos de texto desde el terminal del sistema. </p>
+<p style="text-align: justify;"><strong>Nombre</strong></p>
+<p style="text-align: justify;">Un archivo de script en shell puede tener cualquier nombre, pero cuidado, no le pongas nombres de comandos del sistema. La extensión del archivo podría ser cualquiera, se le pone .sh para distinguirlo de otros tipos de archivos.</p>
+<p><strong>Estructura mínima</strong></p>
+<p>Todos los archivos en shell bash deben comenzar indicando donde se ubica el interprete de comandos, es decir, el programa que sabe que significado tiene cada comando. A continuación se ubica la lista de comandos a ejecutar.</p>
+<p>El mínimo script que podríamos escribir es el siguiente:</p>
+<p><img src="ejemplo-1.png" width="346" height="34" alt=" " /></p>
+<p style="text-align: justify;"><strong>Permisos</strong></p>
+<p style="text-align: justify;">Al archivo hay que darle permisos de ejecución, que por defecto no se asignan al crear el archivo. [ Estos permisos pueden asignarse con el comando chmod]</p>
+<p style="text-align: justify;"><strong>Comentarios</strong></p>
+<p style="text-align: justify;">Todo lenguaje de programación permite escribir comentarios que son líneas de texto para aclarar el código fuente. Los comentarios en Bash se indican con el símbolo #. Por ejemplo, para el script anterior podríamos escribir el siguiente comentario:</p>
+<p style="text-align: justify;"><img src="ejemplo-2.png" width="359" height="52" alt=" " /></p>
+<p style="text-align: justify;"><strong>Invocación</strong></p>
+<p style="text-align: justify;">Cuando se ejecuta un comando se dice que se está <strong>invocando</strong> el comando. Los comandos del sistema son archivos ejecutables ubicados en sitios específicos del sistema y se pueden invocar desde cualquier posición del árbol de directorios, mediante la línea de comando. En cambio, un archivo de script propio, que esta en una ubicación desconocida para el sistema se debe invocar indicando la ruta para llegar a él desde la ubicación en la que estamos. Lo usual es posicionarnos dentro del directorio que contiene el script y teclear:</p>
+<p style="text-align: justify;">./nombreScript.sh</p>
+<p style="text-align: justify;">El punto barra indica que busque el archivo ejecutable dentro del mismo directorio en el que nos encontramos.</p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper activityIdevice em_iDevice" id="id10">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Actividad</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta10_48_2" class="block iDevice_content">
+<ol>
+<li>Crea un script que mande un ping a una de las direcciones de tu red.</li>
+<li>Crea un script que mande un ping a <a href="http://www.google.com">www.google.com</a></li>
+<li>Modifica el anterior script para que el ping solo mande un paquete de eco. Consulta la pagina de <strong>man</strong> del comando <strong>ping</strong>.</li>
+<li>Crea un script que mande un ping de un solo eco a todas las IPs de tu red. Mira en el manual de Vim como copiar y pegar líneas.</li>
+<li>Crea un script que cree la siguiente estructura de directorios y archivos:<br />/ejercicio5/<br />/ejercicio5/subdirectorio<br />/ejercicio5/subdirectorio/archivo1.txt<br />/ejercicio5/subdirectorio/archivo2.txt</li>
+<li>Modifica el ejercicio anterior para que después de creada la estructura anterior:
+<ol>
+<li>Crear un directorio llamado <em>BACKUP</em>, a la misma altura que el directorio <em>ejercicio5.</em></li>
+<li>Se cree un comprimido con toda la estrutura. ( consulta la hoja de <strong>man</strong> sobre la utilidad <strong>tar</strong> )</li>
+<li>Copiar el comprimido dentro de la carpeta <em>BACKUP</em>.</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="index.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="parametros.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>
