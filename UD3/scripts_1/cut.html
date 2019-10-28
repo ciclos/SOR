@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>cut | Scripts en Bash Shell </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Diego Cordoba Aguirre" />
+<meta name="generator" content="eXeLearning  - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+<body class="exe-web-site" id="exe-node-10"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">Scripts en Bash Shell</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Scripts en Bash Shell</a></li>
+   <li><a href="estructura_mnima.html" class="no-ch">Estructura mínima</a></li>
+   <li><a href="parametros.html" class="no-ch">Parametros</a></li>
+   <li><a href="redireccin.html" class="no-ch">Redirección</a></li>
+   <li><a href="variables.html" class="no-ch">Variables</a></li>
+   <li><a href="tuberias.html" class="no-ch">Tuberias</a></li>
+   <li class="current-page-parent"><a href="comandos_utiles.html" class="current-page-parent daddy">Comandos utiles</a>
+   <ul>
+      <li><a href="grep.html" class="no-ch">grep</a></li>
+      <li id="active"><a href="cut.html" class="active no-ch">cut</a></li>
+      <li><a href="tr.html" class="no-ch">tr</a></li>
+      <li><a href="tail.html" class="no-ch">tail</a></li>
+      <li><a href="scp.html" class="no-ch">scp</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="grep.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="tr.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">cut</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id14">
+<div class="iDevice emphasis0" >
+<div id="ta14_48_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;">El comando cut permite, como su nombre indica, cortar de una cadena de texto, las partes que nos interesen. Tiene varias opciones pero las mas útiles son -c y -f. La primera para cortar una serie de caracteres específicos y la segunda para cortar campos. En esta segunda opción debemos indicar cual es delimitador, es decir, que indica que termina un campo y empieza el siguiente, suele ser una coma o un espacio.</p>
+<p style="text-align: justify;">Supongamos que tenemos un archivo llamado nombres.txt, con el siguiente contenido:</p>
+<p style="text-align: justify;"><span style="font-family: symbol;">Francisco Garcia Perez</span><br /><span style="font-family: symbol;">Fernando Camuñas Leandrez</span><br /><span style="font-family: symbol;">Federico Albacete Galan</span></p>
+<p style="text-align: justify;">Si invocamos el siguente comado: <strong>cut -f 2 -d " " nombres.txt</strong>, obtemos la siguiente salida:</p>
+<p style="text-align: justify;"><span style="font-family: symbol;">Garcia</span><br /><span style="font-family: symbol;">Camuñas <br /></span><span style="font-family: symbol;">Albacete </span></p>
+<p style="text-align: justify;">Si invocamos el siguente comado: <strong>cut -c 2,3,4 nombres.txt</strong>, obtemos la siguiente salida:</p>
+<p style="text-align: justify;"><span style="font-family: symbol;">ran<br />ern<br />ede</span></p>
+<p style="text-align: justify;"></p>
+<p style="text-align: justify;"></p>
+<p style="text-align: justify;"></p></div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="grep.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="tr.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

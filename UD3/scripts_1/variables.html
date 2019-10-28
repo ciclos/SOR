@@ -25,17 +25,22 @@
    <li><a href="estructura_mnima.html" class="no-ch">Estructura mínima</a></li>
    <li><a href="parametros.html" class="no-ch">Parametros</a></li>
    <li><a href="redireccin.html" class="no-ch">Redirección</a></li>
+   <li id="active"><a href="variables.html" class="active no-ch">Variables</a></li>
+   <li><a href="tuberias.html" class="no-ch">Tuberias</a></li>
    <li><a href="comandos_utiles.html" class="daddy">Comandos utiles</a>
    <ul class="other-section">
       <li><a href="grep.html" class="no-ch">grep</a></li>
+      <li><a href="cut.html" class="no-ch">cut</a></li>
+      <li><a href="tr.html" class="no-ch">tr</a></li>
+      <li><a href="tail.html" class="no-ch">tail</a></li>
+      <li><a href="scp.html" class="no-ch">scp</a></li>
    </ul>
    </li>
-   <li id="active"><a href="variables.html" class="active no-ch">Variables</a></li>
 </ul>
 </nav>
 <div id='topPagination'>
 <nav class="pagination noprt">
-<a href="grep.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+<a href="redireccin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="tuberias.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
 </nav>
 </div>
 <div id="main-wrapper">
@@ -49,7 +54,11 @@
 <p>Para asignar un valor a una variable se usa el simbolo =. El valor de la variable puede cambiar tantas veces como se defina en el programa. Para acceder al valor de una variable se usa el símbolo de dolar.</p>
 <p>También podemos asignar el valor del resultado de un comando, introduciendo el comando entre estos simbolos $( ).</p>
 <p>En el siguiente ejemplo podemos ver todo esto:</p>
-<p><img src="ejemploVariables.png" alt="" width="706" height="202" /></p></div>
+<p><img src="ejemploVariables.png" alt="" width="706" height="202" /></p>
+<p><strong>Interacción con el usuario</strong></p>
+<p>La utilidad de las variables es que varien su valor según las necesidades del usuario. Una de posibilidad para que esto suceda es que le pidamos al usuario que introduzca de forma interactiva los valores de las variables. Esto se consigue con la instrucción <strong>read.</strong></p>
+<p>Podemos modificar el ejemplo anterior para utilizar esta instrucción:</p>
+<p><img src="ejemploVariables2.png" alt="" width="480" height="223" /></p></div>
 </div>
 </div>
 </article>
@@ -71,6 +80,16 @@
 </ol>
 </li>
 <li>Modifica el script anterior para introducir el valor de las variables por parametros y que los datos se escriban en un archivo, que irá creciendo con cada ejecución del script.</li>
+<li>Modifica el script anterior para introducir el valor de las variables utilizando read.</li>
+<li>Crea un script que pida al usuario introducir una IP y haga un ping de 3 ecos, mostrando la respuesta por pantalla.</li>
+<li>Crea un script que pida 5 numeros por teclado y al final muestre la suma todos, la resta de todos a 100 y la multiplicación de todos.</li>
+<li>Crea un script que haga lo siguiente:
+<ol>
+<li>Coge por parametros un nombre y crea un directorio con ese nombre en el home del usuario. (Podemos acceder directamente al home con el simbolo ~ )</li>
+<li>Pide por teclado 5 correos electronicos y sus contraseñas. Al final almacena todo en un archivo de texto.</li>
+<li>Comprime el archivo anterior y lo copia a la carpeta que se creó en el punto 1.<br />Ejecuta el script 3 veces con diferentes datos para comprobarlo. </li>
+</ol>
+</li>
 </ol>
 </div>
 </div>
@@ -81,7 +100,7 @@
 </div>
 <div id='bottomPagination'>
 <nav class="pagination noprt">
-<a href="grep.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+<a href="redireccin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="tuberias.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
 </nav>
 </div>
 </div>
