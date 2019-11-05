@@ -27,6 +27,7 @@
    <li><a href="redireccin.html" class="no-ch">Redirección</a></li>
    <li><a href="variables.html" class="no-ch">Variables</a></li>
    <li><a href="tuberias.html" class="no-ch">Tuberias</a></li>
+   <li><a href="operaciones.html" class="no-ch">Operaciones</a></li>
    <li class="current-page-parent"><a href="comandos_utiles.html" class="current-page-parent daddy">Comandos utiles</a>
    <ul>
       <li><a href="grep.html" class="no-ch">grep</a></li>
@@ -54,7 +55,8 @@
 <p style="text-align: justify;">Se puede utilizar<span> </span><code>scp</code><span> </span>para copiar archivos de un ordenador local a otro remoto, también se puede copiar del remoto al local y también se puede copiar entre dos remotos, mientras estas conectado a un tercer ordenador, y el tráfico no pasará por el ordenador en que estás.</p>
 <p style="text-align: justify;">La sintaxis mas usual es: </p>
 <p style="text-align: justify;"><code>scp /ruta/al/archivo-origen usuario@ordenador:/ruta/al/directorio-destino/</code></p>
-<p style="text-align: justify;"></p>
+<p style="text-align: justify;">Tras lo cual nos pedirá la contraseña del usuario. Si esto lo usáramos en un script, no es útil que nos pida la contraseña cada vez que se ejecuta. Por ello, vamos a utilizar la herramienta <strong>sshpass</strong> ( instalala si no la tienes ).  Con esta herramienta podríamos hacer lo siguiente dentro de un script.</p>
+<p style="text-align: justify;"><code>sshpass -p 'password' scp /ruta/al/archivo-origen usuario@ordenador:/ruta/al/directorio-destino/</code></p>
 <p style="text-align: justify;"></p>
 <p style="text-align: justify;"></p>
 <p style="text-align: justify;"></p>
@@ -70,6 +72,7 @@
 <div id="ta18_52_2" class="block iDevice_content">
 <ol>
 <li>Abre dos maquinas virtuales de linux server y copia un archivo de uno a otro utilizando scp.</li>
+<li>Conectate por SSH entre dos maquinas virtuales linux. Comprime el archivo home del usuario usando tar. Descarga el archivo creado con scp a la maquina que comenzó la conexión ssh.</li>
 </ol>
 </div>
 </div>
