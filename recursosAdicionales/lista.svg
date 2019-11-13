@@ -220,5 +220,20 @@
         </g>
       </g>
     </g>
+    <g id="y.node.16">
+      <a xlink:href="cron.pdf">
+        <g fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,71,16)" stroke="white">
+          <rect x="-0.7634" y="245.055" width="239.4743" rx="4" ry="4" height="28.3562" stroke="none"/>
+        </g>
+        <g>
+          <g font-size="14px" stroke-linecap="butt" transform="matrix(1,0,0,1,71,16)" text-rendering="geometricPrecision" font-family="'DejaVu Serif'" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
+            <text x="5.2366" xml:space="preserve" y="264.0798" stroke="none">cron</text>
+          </g>
+        </g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" stroke-dasharray="6,2" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,71,16)" stroke-linecap="butt">
+          <rect x="-0.7634" y="245.055" fill="none" width="239.4743" rx="4" ry="4" height="28.3562"/>
+        </g>
+      </a>
+    </g>
   </g>
 </svg>
