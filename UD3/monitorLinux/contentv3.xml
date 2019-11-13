@@ -3,7 +3,7 @@
 <instance xmlns="http://www.exelearning.org/content/v0.3" reference="4" version="0.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://www.exelearning.org/content/v0.3 content.xsd" class="exe.engine.package.Package">
  <dictionary>
   <string role="key" value="_title"></string>
-  <unicode value=""></unicode>
+  <unicode value="monitorLinux"></unicode>
   <string role="key" value="idevices"></string>
   <list></list>
   <string role="key" value="_addPagination"></string>
@@ -339,12 +339,15 @@
               <string value=""></string>
               <string role="key" value="anchor_names"></string>
               <list></list>
+              <string role="key" value="anchors_linked_from_fields"></string>
+              <dictionary></dictionary>
               <string role="key" value="content_w_resourcePaths"></string>
               <unicode content="true" value="&lt;div class=&quot;exe-text&quot;&gt;&lt;p&gt;Linux se configura por medio de archivos de texto. Algunos de los mas importantes son:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;/etc/host: &lt;span&gt;Contiene resoluciones DNS estáticas y únicas del usuario. Como mínimo contiene una entrada para &lt;/span&gt;&lt;strong&gt;localhost.&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;/etc/resolv.conf: Contiene las direcciones IP de los servidores DNS. Se actualiza automáticamente si se configura la interfaz como DHCP o puede que contenga 127.0.0.1.  En todo caso solo debería tocarse para configurar manualmente nuestro servidor DNS ( aunque eso también podemos hacerlo desde el archivo de interfaces )&lt;/li&gt;
-&lt;li&gt;/etc/network/interfaces: &lt;span&gt;se utiliza para definir los&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;em&gt;&lt;strong&gt;nombres lógicos&lt;/strong&gt;&lt;/em&gt;&lt;span&gt; &lt;/span&gt;&lt;span&gt;de las interfaces de redes, a los que se les asociará una configuración determinada. El comando&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;em&gt;&lt;strong&gt;ifup&lt;/strong&gt;&lt;/em&gt;&lt;span&gt; &lt;/span&gt;&lt;span&gt;es el encargado de relacionar una interfaz física con una interfaz lógica.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;/etc/host:&lt;/strong&gt; &lt;span&gt;Contiene resoluciones DNS estáticas y únicas del usuario. Como mínimo contiene una entrada para &lt;/span&gt;&lt;strong&gt;localhost.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;/etc/resolv.conf:&lt;/strong&gt; Contiene las direcciones IP de los servidores DNS. Se actualiza automáticamente si se configura la interfaz como DHCP o puede que contenga 127.0.0.1.  En todo caso solo debería tocarse para configurar manualmente nuestro servidor DNS ( aunque eso también podemos hacerlo desde el archivo de interfaces )&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;/etc/network/interfaces&lt;/strong&gt;: &lt;span&gt;se utiliza para definir los&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;em&gt;&lt;strong&gt;nombres lógicos&lt;/strong&gt;&lt;/em&gt;&lt;span&gt; &lt;/span&gt;&lt;span&gt;de las interfaces de redes, a los que se les asociará una configuración determinada. El comando&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;em&gt;&lt;strong&gt;ifup&lt;/strong&gt;&lt;/em&gt;&lt;span&gt; &lt;/span&gt;&lt;span&gt;es el encargado de relacionar una interfaz física con una interfaz lógica.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span&gt;&lt;strong&gt;/etc/passwd:&lt;/strong&gt; contiene una linea por cada usuario del sistema indicando a que grupos.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/div&gt;"></unicode>
               <string role="key" value="exe.engine.field.Field.persistenceVersion"></string>
               <int value="4"></int>
@@ -368,7 +371,7 @@
               <string role="key" value="nextImageId"></string>
               <int value="0"></int>
               <string role="key" value="parentNode"></string>
-              <none></none>
+              <reference key="7"></reference>
              </dictionary>
             </instance>
            </list>
@@ -504,12 +507,15 @@
               <string value=""></string>
               <string role="key" value="anchor_names"></string>
               <list></list>
+              <string role="key" value="anchors_linked_from_fields"></string>
+              <dictionary></dictionary>
               <string role="key" value="content_w_resourcePaths"></string>
               <unicode content="true" value="&lt;div class=&quot;exe-text&quot;&gt;&lt;p&gt;Linux poseen muchas archivos de registro o logs, que almacenan lo que ha pasado en el sistema. Algunos de ellos son los siguientes:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;/var/log/auth.log: &lt;span&gt; contiene los accesos al sistema, incluidos los intentos fallidos.&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;&lt;span&gt;/var/log/syslog:  se encarga de registrar los mensajes de seguridad del sistema.&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;&lt;span&gt;/var/log/cron.log: registro del demonio cron&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span&gt;/var/log/dpkg.log: registro de actuación sobre los paquetes del sistema&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/div&gt;"></unicode>
               <string role="key" value="exe.engine.field.Field.persistenceVersion"></string>
               <int value="4"></int>
@@ -533,7 +539,7 @@
               <string role="key" value="nextImageId"></string>
               <int value="0"></int>
               <string role="key" value="parentNode"></string>
-              <none></none>
+              <reference key="10"></reference>
              </dictionary>
             </instance>
            </list>
@@ -688,6 +694,7 @@
 &lt;li&gt;&lt;strong&gt;arp&lt;/strong&gt;: muestra información sobre las tablas ARP.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;last&lt;/strong&gt;: muestra un listado con los ultimos usuarios que han entrado al sistema.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;find&lt;/strong&gt;: busca archivos o directorios en el arbol de directorios.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;wc&lt;/strong&gt;: cuenta las lineas( con la opción -l) de la salida de un comando o un archivo.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;/p&gt;&lt;/div&gt;"></unicode>
               <string role="key" value="exe.engine.field.Field.persistenceVersion"></string>
@@ -780,7 +787,7 @@
   <string role="key" value="backgroundImgTile"></string>
   <bool value="0"></bool>
   <string role="key" value="currentNode"></string>
-  <reference key="13"></reference>
+  <reference key="10"></reference>
   <string role="key" value="dublinCore"></string>
   <instance class="exe.engine.package.DublinCore">
    <dictionary>
@@ -811,7 +818,7 @@
     <string role="key" value="subject"></string>
     <unicode value=""></unicode>
     <string role="key" value="title"></string>
-    <unicode value=""></unicode>
+    <unicode value="monitorLinux"></unicode>
     <string role="key" value="type"></string>
     <unicode value=""></unicode>
    </dictionary>
@@ -1068,7 +1075,25 @@
       <string role="key" value="structure"></string>
       <none></none>
       <string role="key" value="title"></string>
-      <none></none>
+      <instance class="exe.engine.lom.lomsubs.titleSub">
+       <dictionary>
+        <string role="key" value="extensiontype_"></string>
+        <none></none>
+        <string role="key" value="string"></string>
+        <list>
+         <instance class="exe.engine.lom.lomsubs.LangStringSub">
+          <dictionary>
+           <string role="key" value="language"></string>
+           <string value="es"></string>
+           <string role="key" value="valueOf_"></string>
+           <string value="monitorLinux"></string>
+          </dictionary>
+         </instance>
+        </list>
+        <string role="key" value="uniqueElementName"></string>
+        <none></none>
+       </dictionary>
+      </instance>
       <string role="key" value="uniqueElementName"></string>
       <string value="general"></string>
      </dictionary>
@@ -1400,7 +1425,25 @@
       <string role="key" value="structure"></string>
       <none></none>
       <string role="key" value="title"></string>
-      <none></none>
+      <instance class="exe.engine.lom.lomsubs.titleSub">
+       <dictionary>
+        <string role="key" value="extensiontype_"></string>
+        <none></none>
+        <string role="key" value="string"></string>
+        <list>
+         <instance class="exe.engine.lom.lomsubs.LangStringSub">
+          <dictionary>
+           <string role="key" value="language"></string>
+           <string value="es"></string>
+           <string role="key" value="valueOf_"></string>
+           <string value="monitorLinux"></string>
+          </dictionary>
+         </instance>
+        </list>
+        <string role="key" value="uniqueElementName"></string>
+        <none></none>
+       </dictionary>
+      </instance>
       <string role="key" value="uniqueElementName"></string>
       <string value="general"></string>
      </dictionary>
