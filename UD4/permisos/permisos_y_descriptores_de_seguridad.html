@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Permisos y descriptores de seguridad | Permisos Windows  </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Diego Cordoba" />
+<meta name="generator" content="eXeLearning  - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-1"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">Permisos Windows </div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Inicio</a></li>
+   <li><a href="creacin_de_usuarios_desde_panel_de_control.html" class="no-ch">Creación de usuarios desde panel de control</a></li>
+   <li><a href="creacin_de_usuarios_desde_la_administracin_de_equipos.html" class="daddy">Creación de usuarios desde la administración de equipos</a>
+   <ul class="other-section">
+      <li><a href="cuenta_de_usuario_vs_perfil_de_usuario.html" class="no-ch">Cuenta de usuario vs perfil de usuario</a></li>
+      <li><a href="activar_cuenta_de_administrador.html" class="no-ch">Activar cuenta de administrador</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="permisos_y_descriptores_de_seguridad.html" class="active daddy">Permisos y descriptores de seguridad</a>
+   <ul>
+      <li><a href="como_ver_los_permisos.html" class="no-ch">Como ver los permisos</a></li>
+      <li><a href="permisos_heredados.html" class="no-ch">Permisos heredados</a></li>
+   </ul>
+   </li>
+   <li><a href="cambiar_los_permisos_de_una_carpeta.html" class="daddy">Cambiar los permisos de una carpeta</a>
+   <ul class="other-section">
+      <li><a href="correspondencia_entre_permisos_y_permisos_especiales.html" class="no-ch">Correspondencia entre permisos y permisos especiales</a></li>
+      <li><a href="comprobar_los_permisos_efectivos.html" class="no-ch">Comprobar los permisos efectivos</a></li>
+   </ul>
+   </li>
+   <li><a href="propietario.html" class="no-ch">Propietario</a></li>
+   <li><a href="donde_se_aplican_los_permisos.html" class="no-ch">Donde se aplican los permisos</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="activar_cuenta_de_administrador.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="como_ver_los_permisos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Permisos y descriptores de seguridad</h1></header>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id0">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Permisos y descriptores de seguridad</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta0_48_2" class="block iDevice_content">
+<div class="exe-text"><div id="mainSection">
+<div id="mainBody">
+<div id="sectionSection0" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+<p xmlns="">Cada contenedor y objeto de la red tiene información de control de acceso adjunta. Esta información se denomina descriptor de seguridad y controla el tipo de acceso permitido a usuarios y grupos. El descriptor de seguridad se crea automáticamente junto con el contenedor u objeto que se crea. Un ejemplo típico de objeto con un descriptor de seguridad es un archivo.</p>
+<p xmlns="">Los permisos se definen en el descriptor de seguridad de un objeto. Se asocian o asignan a usuarios y grupos específicos. Por ejemplo, para el archivo Temp.dat, el grupo de cuentas predefinidas de administrador podría tener asignados permisos para leer, escribir y eliminar, mientras que el grupo de operadores de copia de seguridad sólo permisos para leer y escribir.</p>
+<p xmlns="">Cada asignación de permisos a un usuario o grupo se representa en el sistema como una entrada de control de acceso (ACE). Al conjunto completo de entradas de permiso de un descriptor de seguridad se le denomina conjunto de permisos o lista de control de acceso (ACL). De esta forma, para un archivo denominado Temp.dat, el conjunto de permisos incluye dos entradas de permiso: una para el grupo de cuentas predefinidas de administrador y otra para el grupo de operadores de copia de seguridad.</p>
+</content></div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id1">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Permisos explícitos y heredados</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta1_49_2" class="block iDevice_content">
+<div class="exe-text"><div id="mainSection">
+<div id="mainBody">
+<div id="sectionSection1" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+<p xmlns="">Hay dos tipos de permisos: permisos explícitos y permisos heredados.</p>
+<ul xmlns="">
+<li class="unordered">Los permisos explícitos son aquellos que se establecen de forma predeterminada en objetos que no son secundarios cuando se crea el objeto, o los que crea el usuario en objetos secundarios, primarios o que no son secundarios.<br /><br /></li>
+<li class="unordered">Los permisos heredados son los que se propagan a un objeto desde un objeto primario. Los permisos heredados facilitan la tarea de administrar permisos y aseguran su coherencia entre todos los objetos de un contenedor determinado. <br /><br /></li>
+</ul>
+<p xmlns="">De forma predeterminada, los objetos de un contenedor heredan los permisos desde ese contenedor cuando se crean los objetos. Por ejemplo, cuando crea la carpeta Mi carpeta, todas las subcarpetas y archivos creados en la carpeta Mi carpeta heredan de forma automática los permisos de la carpeta. De esta manera, la carpeta Mi carpeta tiene permisos explícitos, mientras que las subcarpetas y los archivos heredan los permisos.</p>
+</content>
+<div id="mainSection">
+<div id="mainBody">
+<div id="sectionSection1" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+<p>Los permisos Denegar heredados no impiden el acceso a un objeto si éste cuenta con una entrada de permiso explícito Permitir. Los permisos explícitos tienen prioridad sobre los permisos heredados, incluidos los permisos Denegar heredados.</p>
+</content></div>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="activar_cuenta_de_administrador.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="como_ver_los_permisos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>
