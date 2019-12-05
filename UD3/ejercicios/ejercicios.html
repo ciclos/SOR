@@ -11,7 +11,7 @@
 
 <body>
   <header class="titulo">
-    <h1>Gestión remota de usuarios</h1>
+    <h1>Gestión de usuarios en Linux</h1>
   </header>
   <nav class="navegacion">
 
@@ -47,8 +47,11 @@
       defecto, pero es mas util para incluirlo en un script.
       Useradd permite asignar a un usuario un directorio previamente creado, para que
       al hacer login se inicie en él.
-      Por otro lado 'passwd' nos permite cambiar la clave de un usuario.
-      <br>Crea un script que haga lo siguiente:
+      Por otro lado 'passwd' nos permite cambiar la clave de un usuario. ( passwd también es interactivo, puedes usarlo con expect)
+      <br>
+      Investiga también chpasswd para usarlo dentro de la linea de comandos. 
+      <br>
+      Crea un script que haga lo siguiente:
 
       <ul>
         <li>
@@ -78,17 +81,51 @@
       </ul>
       <ul class="ampliacion">
         <li>
-            Modifica el script y que los usuarios y grupos salgan en ristra, separados por comas.
+          Modifica el script y que los usuarios y grupos salgan en ristra, separados por comas.
         </li>
         <li>
-            Crea un  archivo de registro del script, es decir, redirije la salida a un archivo llamado: user.log
+          Crea un archivo de registro del script, es decir, redirije la salida a un archivo llamado: user.log
         </li>
       </ul>
-
     </article>
-
+    <article class="ejercicio">
+      <ul>
+        <li>
+          Crea un script que borre tres usuarios, cuyos nombres se le han introducido
+          por parametros.
+        </li>
+        <li>
+          Al finalizar el propio script lanza este mensaje: "Se ha borrado :" y a continuación el
+          nombre de los usuarios borrados.
+        </li>
+      </ul>
+    </article>
+    <article class="ejercicio">
+      <ul>
+        <li>
+          Crea un script que se conecte a todos los equipos de una red y cree el usuario "informatica", de contraseña "pass".
+        </li>
+      </ul>
+    </article>
+    <article class="ejercicio">
+        <ul>
+          <li>
+            Crea un script que se conecte a un equipo remoto y cree el usuario "alumno" de contraseña "alumno".
+          </li>
+          <li>
+            Además, debe crear en el home de ese usuario los siguientes directorios: "apuntes" y "trabajos".
+          </li>
+          <li>
+            El script debe copiar los archivos SOM.txt y SOR.txt, desde el host del administrador al ordenador remoto. ( Crea los archivos previamente en el host del administrador)
+          </li>
+          <li>
+            Finalmente el script cambia el propietario del archivo a "diego".
+          </li>
+        </ul>
+      </article>
   </section>
 </body>
+
 <script type="text/javascript">
   var mostrando = 0;
   ejercicios = document.querySelectorAll(".ejercicio");

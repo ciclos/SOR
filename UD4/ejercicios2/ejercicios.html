@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Gestión remota de usuarios</title>
+  <meta charset="UTF-8">
+  <meta name="title" content="Actividades">
+  <meta name="description" content="Actividades">
+  <link href="estilos.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header class="titulo">
+    <h1>Gestión de usuarios en Windows</h1>
+  </header>
+  <nav class="navegacion">
+
+  </nav>
+  <section class="actividades">
+    <article class="ejercicio">
+      <ul>
+        <li>
+          Crea dos usuarios: uno administrador y otro normal. Para el normal establece que no puede cambiar la
+          contraseña y que esta no expira
+        </li>
+      </ul>
+    </article>
+    <article class="ejercicio">
+      <ul>
+        <li>
+          Activa la cuenta de "Administrador" en Windows 7.
+        </li>
+      </ul>
+    </article>
+    <article class="ejercicio">
+      <ul>
+        <li>
+          Crea una carpeta en C:\. Restringe el acceso para que solo pueda acceder el usuario Diego.
+        </li>
+      </ul>
+    </article>
+    <article class="ejercicio">
+      <ul>
+        <li>
+          Crea un usuario nuevo que tenga que cambiar la contraseña al inicio de la sesión.
+        </li>
+      </ul>
+    </article>
+    <article class="ejercicio">
+      <ul>
+        <li>
+          Añade un disco nuevo a la maquina virtual. De 1GB. Formatealo en NTFS.
+        </li>
+        <li>
+          En esa partición crea los directorios: administrativos, diseñadores, directivos y finanzas.
+        </li>
+        <li>
+          Crea 4 grupos: administrativos, diseñadores, directivos y finanzas.
+        </li>
+        <li>
+          Crea 8 usuarios y mete 2 en cada grupo.
+        </li>
+        <li>
+          Da acceso a las carpetas de tal forma que cada grupo pueda acceder solo a su directorio correspodiente
+        </li>
+        <li>
+          Modifica los permisos para que los directivos puedan acceder a todas las carpetas.
+        </li>
+      </ul>
+
+    </article>
+    <article class="ejercicio">
+      <ul>
+        <li>
+          Crea en la unidad D:\ un directorio llamdo MODULOS y dentro un directorio para cada modulo.
+        </li>
+        <li>
+          Crea un usuario por cada profesor de cada modulo del segundo del ciclo y 2 para 2 alumnos.
+        </li>
+        <li>
+          A los directorios, los profesores pueden acceder para crear archivos y eliminarlos. Cada profesor solo a su
+          directorio correspondiente.
+        </li>
+        <li>
+          Los alumnos pueden acceder a todos los directorios, pero solo pueden leer.
+        </li>
+        <li>
+          Los administradores del sistema tienen control total sobre todos los directorios.
+        </li>
+      </ul>
+      <ul class="ampliacion">
+        <li>
+          Crea un directorio dentro de cada modulo, que se llame "Apuntes" y otro "trabajos". Dentro de trabajos un
+          directorio para cada uno de los dos alumnos antes creados.
+        </li>
+        <li>
+          Los alumnos tiene permiso para leer y escribir en sus carpetas dentro de trabajos. Pero solo pueden leer de la
+          carpeta Apuntes.
+        </li>
+        <li>
+          Los profesores solo tiene permiso de lectura las carpetas de los alumnos, dentro de las carpetas de trabajos. Pero pueden leer y escribir
+          en la carpeta Apuntes.
+        </li>
+      </ul>
+    </article>
+
+  </section>
+</body>
+<script type="text/javascript">
+  var mostrando = 0;
+  ejercicios = document.querySelectorAll(".ejercicio");
+  navegacion = document.querySelector("nav.navegacion");
+  ejercicios[0].style.display = "block"; // Por defecto mostramos el primer ejercicio
+
+  for (var i = 0; i < ejercicios.length; i++) {
+    navegacion.innerHTML += '<a onclick="cambiar(this)">' + (i + 1) + '</a>';
+    ejercicios[i].addEventListener('click', function (event) {
+      if (!confirm("sure u want to delete " + this.title)) {
+        event.preventDefault();
+      }
+    });
+  }
+
+  function cambiar(enlace) {
+    indice = (enlace.innerHTML - 1);
+    ejercicios[mostrando].style.display = "none";
+    ejercicios[indice].style.display = "block";
+    mostrando = indice;
+  }
+</script>
+
+</html>
