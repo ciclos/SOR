@@ -46,9 +46,10 @@
       y automaticamente crea un directorio en el /home. En cambio useradd, no hace esto por
       defecto, pero es mas util para incluirlo en un script.
       Useradd permite asignar a un usuario un directorio previamente creado, para que
-      al hacer login se inicie en él.
-      Por otro lado 'passwd' nos permite cambiar la clave de un usuario. ( passwd también es interactivo, puedes usarlo con expect)
-      <br>
+      al hacer login se inicie en él.<br>
+      Por otro lado 'passwd' nos permite cambiar la clave de un usuario. ( passwd también es interactivo, puedes usarlo con expect)<br>
+      También puedes intentar meter directamente la contraseña en /etc/shadow.<br>
+      Las contraseñas se incriptan en linux. Por lo que tendrías que buscar información tambien sobre crypt()<br>
       Investiga también chpasswd para usarlo dentro de la linea de comandos. 
       <br>
       Crea un script que haga lo siguiente:
