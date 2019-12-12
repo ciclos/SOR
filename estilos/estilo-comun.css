@@ -1,0 +1,116 @@
+header.titulo {
+    grid-area: titulo;
+    background-color:  rgb(0, 63, 105);
+    color: white;
+}
+
+.titulo h1{
+    text-align: center;
+    font: 2em arial;
+}
+
+img{
+    width: 80%;
+    height: auto;
+    margin: 1em auto;
+    display: block;
+}
+
+.apuntes a, .index a{
+    text-decoration: none;
+    color: black;
+}
+
+.apuntes a:after, .index a:after{
+    content: '\25ba';
+    color: rgb(255, 136, 0);
+   
+}
+
+.indice a{
+    color: white;
+    text-decoration: none;
+}
+
+/* Estilos para el tooltip */
+
+.tooltip {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    display: inline-block;
+	background: rgb(255, 196, 0);
+    border-radius: .4em;
+    width: 1.5em;
+    height: 1.5em;
+    font: 1em tahoma;
+    padding: 0.2em;
+    
+    box-shadow: -4px 5px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+    border-left-color: rgb(255, 196, 0);
+	border-right: 0;
+	border-top: 0;
+	margin-top: -5px;
+    margin-right: -10px;
+    
+}
+
+.tooltip:hover {
+    width: 70%;
+    height: auto;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* Estilos para el indice */
+.indice{
+    width: 55px;
+    height: 55px;
+    border-radius: 0 0 100% 0;
+    background-color: grey;
+    position: absolute;
+    top:0px;
+    left:0px;
+    z-index: 10;
+    transition: all 0.5s;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0 1em 0 0;
+    color: white;
+}
+
+.indice:hover{
+    width: auto;
+    height: auto;
+    border-radius: 0 0 0.5em 0;
+}
+
+div.hamburger {
+    width: 30px;
+    height: 5px;
+    background-color: rgb(255, 255, 255);
+    margin: 6px;
+    border-radius: 20%;
+  }
+
+/* Estilos para las migas */
+#migasPan a{
+    text-decoration: none;
+    color: white;
+}

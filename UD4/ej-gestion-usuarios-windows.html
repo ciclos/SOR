@@ -6,17 +6,23 @@
   <meta charset="UTF-8">
   <meta name="title" content="Actividades">
   <meta name="description" content="Actividades">
-  <link href="estilos.css" rel="stylesheet" type="text/css" />
+  <link href="../estilos/estilo-actividades.css" rel="stylesheet" type="text/css" />
+  <link href="../estilos/estilo-comun.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
+
   <header class="titulo">
-    <h1>Gestión de usuarios en Windows</h1>
+    <h1>Actividades: Gestión de usuarios en Windows</h1>
   </header>
+
+
   <nav class="navegacion">
+
 
   </nav>
   <section class="actividades">
+
     <article class="ejercicio">
       <ul>
         <li>
@@ -38,6 +44,11 @@
           Crea una carpeta en C:\. Restringe el acceso para que solo pueda acceder el usuario Diego.
         </li>
       </ul>
+      <div class="tooltip"><strong>!</strong></br>
+        <span class="tooltiptext">
+          Quita los permisos heredados y luego dale especificamente los permisos al usuario.
+        </span>
+      </div>
     </article>
     <article class="ejercicio">
       <ul>
@@ -67,7 +78,6 @@
           Modifica los permisos para que los directivos puedan acceder a todas las carpetas.
         </li>
       </ul>
-
     </article>
     <article class="ejercicio">
       <ul>
@@ -98,35 +108,52 @@
           carpeta Apuntes.
         </li>
         <li>
-          Los profesores solo tiene permiso de lectura las carpetas de los alumnos, dentro de las carpetas de trabajos. Pero pueden leer y escribir
+          Los profesores solo tiene permiso de lectura las carpetas de los alumnos, dentro de las carpetas de trabajos.
+          Pero pueden leer y escribir
           en la carpeta Apuntes.
         </li>
       </ul>
+      <div class="tooltip"><strong>&nbsp;&nbsp;!</strong></br>
+        <span class="tooltiptext">
+          <ul>
+            <li>Crea un grupo para las alumnos.</li>
+            <li>Cuando restrinjas los permisos, deja el de los administradores para poder gestionarlo todo mas
+              facilmente. </li>
+          </ul>
+        </span>
+      </div>
+    </article>
+    <article class="ejercicio">
+      <ul>
+        <li>
+          En Win 7, crea una carpeta en la segunda unidad de disco, llamada "compartidaEnRed". Compartela en red con el
+          nombre "WEB" y establece un solo usuario simultaneo. Dale acceso de control total a Diego.
+        </li>
+        <li>
+          Crea un red en GNS3 con dos WinXP y el Win7. 
+        </li>
+        <li>
+          Comprueba los permisos para Diego y para el resto de usuarios.
+        </li>
+        <li>
+          Comprueba que solo puede haber un usuario simultaneamente viendo
+          la carpeta.
+        </li>
+
+      </ul>
+      <div class="tooltip"><strong>&nbsp;&nbsp;!</strong></br>
+        <span class="tooltiptext">
+          <ul>
+            <li>Acuerdate de establecer el mismo grupo de trabajo para todos los equipos</li>
+            <li>Cambiale también el nombre de equipo</li>
+          </ul>
+        </span>
+      </div>
     </article>
 
   </section>
 </body>
-<script type="text/javascript">
-  var mostrando = 0;
-  ejercicios = document.querySelectorAll(".ejercicio");
-  navegacion = document.querySelector("nav.navegacion");
-  ejercicios[0].style.display = "block"; // Por defecto mostramos el primer ejercicio
-
-  for (var i = 0; i < ejercicios.length; i++) {
-    navegacion.innerHTML += '<a onclick="cambiar(this)">' + (i + 1) + '</a>';
-    ejercicios[i].addEventListener('click', function (event) {
-      if (!confirm("sure u want to delete " + this.title)) {
-        event.preventDefault();
-      }
-    });
-  }
-
-  function cambiar(enlace) {
-    indice = (enlace.innerHTML - 1);
-    ejercicios[mostrando].style.display = "none";
-    ejercicios[indice].style.display = "block";
-    mostrando = indice;
-  }
+<script type="text/javascript" src="../js/funciones.js">
 </script>
 
 </html>

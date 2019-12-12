@@ -6,7 +6,8 @@
   <meta charset="UTF-8">
   <meta name="title" content="Actividades">
   <meta name="description" content="Actividades">
-  <link href="estilos.css" rel="stylesheet" type="text/css" />
+  <link href="../estilos/estilo-actividades.css" rel="stylesheet" type="text/css" />
+  <link href="../estilos/estilo-comun.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -46,12 +47,19 @@
       y automaticamente crea un directorio en el /home. En cambio useradd, no hace esto por
       defecto, pero es mas util para incluirlo en un script.
       Useradd permite asignar a un usuario un directorio previamente creado, para que
-      al hacer login se inicie en él.<br>
-      Por otro lado 'passwd' nos permite cambiar la clave de un usuario. ( passwd también es interactivo, puedes usarlo con expect)<br>
-      También puedes intentar meter directamente la contraseña en /etc/shadow.<br>
-      Las contraseñas se incriptan en linux. Por lo que tendrías que buscar información tambien sobre crypt()<br>
-      Investiga también chpasswd para usarlo dentro de la linea de comandos. 
-      <br>
+      al hacer login se inicie en él. Por otro lado 'passwd' nos permite cambiar la clave de un usuario.
+      <div class="tooltip"><strong>&nbsp;&nbsp;!</strong></br>
+        <span class="tooltiptext">
+          <ul>
+            <li> passwd también es interactivo, puedes usarlo con expect</li>
+            <li>También puedes intentar meter directamente la contraseña en /etc/shadow.</li>
+            <li>Las contraseñas se incriptan en linux. Por lo que tendrías que buscar información tambien sobre crypt()
+            </li>
+            <li>Investiga también chpasswd para usarlo dentro de la linea de comandos. </li>
+          </ul>
+        </span>
+      </div>
+
       Crea un script que haga lo siguiente:
 
       <ul>
@@ -104,50 +112,33 @@
     <article class="ejercicio">
       <ul>
         <li>
-          Crea un script que se conecte a todos los equipos de una red y cree el usuario "informatica", de contraseña "pass".
+          Crea un script que se conecte a todos los equipos de una red y cree el usuario "informatica", de contraseña
+          "pass".
         </li>
       </ul>
     </article>
     <article class="ejercicio">
-        <ul>
-          <li>
-            Crea un script que se conecte a un equipo remoto y cree el usuario "alumno" de contraseña "alumno".
-          </li>
-          <li>
-            Además, debe crear en el home de ese usuario los siguientes directorios: "apuntes" y "trabajos".
-          </li>
-          <li>
-            El script debe copiar los archivos SOM.txt y SOR.txt, desde el host del administrador al ordenador remoto. ( Crea los archivos previamente en el host del administrador)
-          </li>
-          <li>
-            Finalmente el script cambia el propietario del archivo a "diego".
-          </li>
-        </ul>
-      </article>
+      <ul>
+        <li>
+          Crea un script que se conecte a un equipo remoto y cree el usuario "alumno" de contraseña "alumno".
+        </li>
+        <li>
+          Además, debe crear en el home de ese usuario los siguientes directorios: "apuntes" y "trabajos".
+        </li>
+        <li>
+          El script debe copiar los archivos SOM.txt y SOR.txt, desde el host del administrador al ordenador remoto. (
+          Crea los archivos previamente en el host del administrador)
+        </li>
+        <li>
+          Finalmente el script cambia el propietario del archivo a "diego".
+        </li>
+      </ul>
+    </article>
+    
   </section>
 </body>
 
-<script type="text/javascript">
-  var mostrando = 0;
-  ejercicios = document.querySelectorAll(".ejercicio");
-  navegacion = document.querySelector("nav.navegacion");
-  ejercicios[0].style.display = "block"; // Por defecto mostramos el primer ejercicio
-
-  for (var i = 0; i < ejercicios.length; i++) {
-    navegacion.innerHTML += '<a onclick="cambiar(this)">' + (i + 1) + '</a>';
-    ejercicios[i].addEventListener('click', function (event) {
-      if (!confirm("sure u want to delete " + this.title)) {
-        event.preventDefault();
-      }
-    });
-  }
-
-  function cambiar(enlace) {
-    indice = (enlace.innerHTML - 1);
-    ejercicios[mostrando].style.display = "none";
-    ejercicios[indice].style.display = "block";
-    mostrando = indice;
-  }
+<script type="text/javascript" src="../js/funciones.js">
 </script>
 
 </html>

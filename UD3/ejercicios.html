@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Gestión remota de usuarios</title>
+  <meta charset="UTF-8">
+  <meta name="title" content="Actividades">
+  <meta name="description" content="Actividades">
+  <link href="../estilos/estilo-actividades.css" rel="stylesheet" type="text/css" />
+  <link href="../estilos/estilo-comun.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header class="titulo">
+    <h1>Gestión de usuarios en Linux</h1>
+  </header>
+  <nav class="navegacion">
+
+  </nav>
+  <section class="actividades">
+    <article class="ejercicio">
+      <ul>
+        <li>Crea un script que muestre todos los archivos de un determinado usuario, listado desde el
+          directorio raiz y los permisos que tienen.
+        </li>
+      </ul>
+      <ul class="ampliacion">
+        <li>
+          Modifica el script para que el usuario a filtrar se introduzca por parametros
+        </li>
+      </ul>
+    </article>
+    <article class="ejercicio">
+      <ul>
+        <li>Crea un script que muestre si un determinado usuario existe, mostrando su línea de /etc/password
+          Además muestra otra línea donde se muestre si ese usuario se ha logeado en el sistema
+        </li>
+      </ul>
+      <ul class="ampliacion">
+        <li>
+          Modifica el script para que el usuario a filtrar se introduzca por parametros
+        </li>
+      </ul>
+    </article>
+    <article class="ejercicio">
+      El comando adduser es mas comodo de usar de forma interactiva, porque te pide el password
+      y automaticamente crea un directorio en el /home. En cambio useradd, no hace esto por
+      defecto, pero es mas util para incluirlo en un script.
+      Useradd permite asignar a un usuario un directorio previamente creado, para que
+      al hacer login se inicie en él. Por otro lado 'passwd' nos permite cambiar la clave de un usuario.
+      <div class="tooltip"><strong>&nbsp;&nbsp;!</strong></br>
+        <span class="tooltiptext">
+          <ul>
+            <li> passwd también es interactivo, puedes usarlo con expect</li>
+            <li>También puedes intentar meter directamente la contraseña en /etc/shadow.</li>
+            <li>Las contraseñas se incriptan en linux. Por lo que tendrías que buscar información tambien sobre crypt()
+            </li>
+            <li>Investiga también chpasswd para usarlo dentro de la linea de comandos. </li>
+          </ul>
+        </span>
+      </div>
+
+      Crea un script que haga lo siguiente:
+
+      <ul>
+        <li>
+          Crea un usuario utilizando el nombre introducido por parametros.
+        </li>
+        <li>
+          Crea un directorio en /home para ese usuario con el nombre del usuario.
+        </li>
+        <li>
+          Cambia el propietario y grupo del directorio para darle acceso al usuario.
+        </li>
+        <li>
+          Llama a passwd para ponerle una contraseña al usuario.
+        </li>
+      </ul>
+    </article>
+    <article class="ejercicio">
+      <ul>
+        <li>
+          Crea un script que nos permita ver una lista de los nombres de todos los usuarios del sistema.
+          Antes de mostrar esta lista, por pantalla se debe mostrar el mensaje: USUARIOS.
+        </li>
+        <li>
+          A continuación se muestran todos los grupos existentes en el sistema, mostrando solo el nombre.
+          Antes de mostrar esta lista, por pantalla se debe mostrar el mensaje: GRUPOS.
+        </li>
+      </ul>
+      <ul class="ampliacion">
+        <li>
+          Modifica el script y que los usuarios y grupos salgan en ristra, separados por comas.
+        </li>
+        <li>
+          Crea un archivo de registro del script, es decir, redirije la salida a un archivo llamado: user.log
+        </li>
+      </ul>
+    </article>
+    <article class="ejercicio">
+      <ul>
+        <li>
+          Crea un script que borre tres usuarios, cuyos nombres se le han introducido
+          por parametros.
+        </li>
+        <li>
+          Al finalizar el propio script lanza este mensaje: "Se ha borrado :" y a continuación el
+          nombre de los usuarios borrados.
+        </li>
+      </ul>
+    </article>
+    <article class="ejercicio">
+      <ul>
+        <li>
+          Crea un script que se conecte a todos los equipos de una red y cree el usuario "informatica", de contraseña
+          "pass".
+        </li>
+      </ul>
+    </article>
+    <article class="ejercicio">
+      <ul>
+        <li>
+          Crea un script que se conecte a un equipo remoto y cree el usuario "alumno" de contraseña "alumno".
+        </li>
+        <li>
+          Además, debe crear en el home de ese usuario los siguientes directorios: "apuntes" y "trabajos".
+        </li>
+        <li>
+          El script debe copiar los archivos SOM.txt y SOR.txt, desde el host del administrador al ordenador remoto. (
+          Crea los archivos previamente en el host del administrador)
+        </li>
+        <li>
+          Finalmente el script cambia el propietario del archivo a "diego".
+        </li>
+      </ul>
+    </article>
+    
+  </section>
+</body>
+
+<script type="text/javascript" src="../js/funciones.js">
+</script>
+
+</html>
