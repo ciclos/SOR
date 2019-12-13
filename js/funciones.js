@@ -15,6 +15,6 @@ function cambiar(enlace) {
     ejercicios[mostrando].style.display = "none";
     ejercicios[indice].style.display = "block";
     document.querySelector("nav.navegacion").childNodes[indice + 1].style.backgroundColor = "red";
-    document.querySelector("nav.navegacion").childNodes[mostrando + 1].style.backgroundColor = "#203F68";
+    document.querySelector("nav.navegacion").childNodes[mostrando + 1].style.backgroundColor = "#003f69";
     mostrando = indice;
 }

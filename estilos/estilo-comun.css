@@ -13,7 +13,10 @@ img{
     width: 80%;
     height: auto;
     margin: 1em auto;
+    padding: 1em;
     display: block;
+    border: 1px solid rgb(0, 63, 105);
+    box-shadow: 5px -5px 5px -2px rgba(0,0,0,0.5);
 }
 
 .apuntes a, .index a{
@@ -26,6 +29,32 @@ img{
     color: rgb(255, 136, 0);
    
 }
+
+section.index>ol>li{
+    margin-left:1.5em;
+}
+
+section.index>ol>li:before{
+    content: '';
+    
+    width: 1.5em;
+    height: 1em;
+   
+    display: inline-block;
+    background-color: rgb(96, 173, 224); 
+    position: absolute;
+    left: 0.2em;
+}
+
+section.index>ol>li{
+    font: 1.2em arial;
+    margin: 0em;
+}
+
+section.index li{
+    font: 0.9em arial
+}
+
 
 .indice a{
     color: white;
