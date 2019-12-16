@@ -9,7 +9,7 @@ header.titulo {
     font: 2em arial;
 }
 
-img{
+img:not(.codigo){
     width: 80%;
     height: auto;
     margin: 1em auto;
@@ -17,6 +17,15 @@ img{
     display: block;
     border: 1px solid rgb(0, 63, 105);
     box-shadow: 5px -5px 5px -2px rgba(0,0,0,0.5);
+}
+
+codigo{
+    color: rgb(200, 255, 0);
+    background: black;
+    font: arial;
+    display: block;
+    margin: 0.5em;
+    padding: 0.3em;
 }
 
 .apuntes a, .index a{
@@ -31,11 +40,22 @@ img{
 }
 
 section.index>ol>li{
-    margin-left:1.5em;
+    padding-bottom:1em;
 }
 
+
+section.index{
+    padding: 1em;
+    column-count: 2;
+    column-rule-width: 1px;
+    column-rule-style: solid;
+    column-rule-color: rgb(0, 63, 105);
+    column-gap: 2em;
+}
+
+/*
 section.index>ol>li:before{
-    content: '';
+    content: ' ';
     
     width: 1.5em;
     height: 1em;
@@ -43,16 +63,27 @@ section.index>ol>li:before{
     display: inline-block;
     background-color: rgb(96, 173, 224); 
     position: absolute;
-    left: 0.2em;
+    left: 0.3em;
+}*/
+
+li.anexo{
+    list-style-type: none;
 }
+
+
 
 section.index>ol>li{
     font: 1.2em arial;
-    margin: 0em;
+   /* margin: 0em;*/
 }
 
 section.index li{
-    font: 0.9em arial
+    font: 0.8em arial
+}
+
+section.index ol ul{
+    border: 1px solid rgb(0, 63, 105);
+    border-radius: 0.3em;
 }
 
 

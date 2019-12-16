@@ -16,18 +16,21 @@ section.apuntes article:not(.practica){
     padding: 1em;
     column-count: 2;
     column-rule-width: 1px;
-    column-rule-style: solid;
-    column-rule-color: rgb(0, 63, 105);
+    column-rule-style: dotted;
+    column-rule-color: rgb(151, 151, 151);
     column-gap: 2em;
+    border-bottom: 1px solid rgb(0, 63, 105);;
 }
 
-section.apuntes p{
+section.apuntes{
     text-align: justify;
 }
 
 section.apuntes article h2{
     font: 1.3em tahoma;
-    padding: 0.2em;
+    font-weight: bold;
+    margin-top: 0;
+    
 }
 
 section.apuntes article h2:before{

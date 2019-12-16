@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title> Sistemas operativos en red</title>
+    <meta charset="UTF-8">
+    <meta name="title" content="Actividades">
+    <meta name="description" content="Actividades">
+    <link href="../estilos/estilo-apuntes.css" rel="stylesheet" type="text/css" />
+    <link href="../estilos/estilo-comun.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <header class="titulo">
+        <h1>Servicio de directorio</h1>
+    </header>
+
+    <section class="apuntes">
+        <article>
+            <h2> Servicio de directorio </h2>
+            <p>
+                Hasta ahora, con los conocimientos que tenemos en gestión de usuarios, si en una red
+                quisiéramos que un usuario tuviera acceso a recursos de varios servidores, tendríamos que darle
+                de alta como usuario local en cada uno de ellos, e incluirle en el grupo oportuno dentro de cada
+                servidor.
+            </p>
+            <p>En redes pequeñas (menos de 20 equipos y menos de 2 servidores aprox.) podemos permitirnos
+                emplear tiempo en crear los usuarios en cada equipo y asignar los permisos oportunos. Pero si
+                se trata de una red de mayor tamaño, conforme va creciendo el no de equipos, servidores y
+                usuarios, esta tarea es cada vez más tediosa y se necesita emplear demasiado tiempo en la
+                misma.
+            </p>
+            <p>En estos casos sería deseable tener una administración centralizada de todos los recursos de
+                nuestra red. De esta forma se crearía el usuario una única vez, pudiendo acceder el usuario a
+                cualquier equipo con los mismos permisos sobre los recursos compartidos en la red. Además, si
+                un usuario cambia de contraseña, este cambio se realizaría en toda la red. Para esta
+                administración tan deseable se utiliza el servicio de directorio.
+            </p>
+            <h2> Caracteristicas de un servicio de directorio </h2>
+            <p>
+                Un servicio de directorio tiene las siguientes características:
+                <ul>
+                    <li> Es un almacén de datos (una base de datos): almacena la información de todos los
+                        objetos que intervienen en la red: usuarios, grupos, equipos, recursos compartidos...
+                        Esta base de datos puede estar distribuida entre varios servidores.</li>
+                    <li> La información está distribuida jerárquicamente: organizada mediante estructuras
+                        similares al árbol de directorios de Windows.</li>
+                    <li>Permite la administración centralizada de los recursos de la red</li>
+                </ul>
+
+            </p>
+            <p>
+                Existen muchas implementaciones del servicio de directorio las mas comunes son: Active Directory y
+                OpenDLap.
+            </p>
+            <h2>Sistema de nombres</h2>
+            <p>
+                El DNS se utiliza dentro del sistema de directorio para identificar los dominios y los
+                equipos dentro de ellos, y de esta manera poder devolver la IP del dominio o equipo en la red.
+                Pero dentro del Active Directory cada elemento: dominio, usuario, equipo, recurso compartido
+                se almacena con un objeto con una serie de atributos:
+                <ul>
+                    <li>CN (Nombre común)
+                        <p>
+                            El nombre especifico del objeto
+                        </p>
+                    </li>
+                    <li>OU (Unidad organizativa)
+
+                        <p>
+                            Las Unidades Organizativas pueden usarse para organizar cientos de objetos en el directorio
+                            dentro de unidades administrables. Las Unidades Organizativas se usaran para agrupar y
+                            organizar objetos con propósitos administrativos, como delegar permisos, asignar políticas
+                            de seguridad para uno o varios objetos como uno solo. Las unidades organizativas pueden
+                            contener otras unidades organizativa.
+                        </p>
+                    </li>
+                    <li>DC (Dominio)
+                        <p>Un dominio es un conjunto de ordenadores que comparten un nombre y un conjunto de
+                            directivas de seguridad.
+                            Todos los objetos forman parte de algún dominio, y la política de seguridad (definida por
+                            las
+                            directivas) es uniforme para todos los objetos del mismo dominio.
+                            Cada dominio se identifica unívocamente con un nombre de dominio DNS (asir.com), que debe
+                            ser el sufijo de los objetos del dominio. Por ejemplo el equipo “pc3” se identificaría con
+                            el
+                            nombre pc3.asir.com
+                        </p>
+                    </li>
+                </ul>
+                Se utilizan todos los atributos que se han visto para identificar la ruta
+                del objeto dentro del árbol de directorios del A. Directory. Por ejemplo, aunque puede
+                haber dos usuarios con el mismo nombre común, deben de existir en distintas unidades
+                organizativas. Así el nombre completo de un usuario podría ser:
+                <ul>
+                    <li> CN=”Rafael Gómez”</li>
+                    <li> OU=”Users”</li>
+                    <li> DC=”ejemplo.com”</li>
+                </ul>
+            </p>
+            <p>
+                <h2>Arboles y bosques</h2>
+                <h3>Arbol </h3>
+                Un árbol es un conjunto de uno o más dominios que comparten un espacio de nombres
+                contiguo, es decir, que derivan del mismo nombre del dominio raíz, y por tanto tienen un sufijo
+                DNS común.
+                El primer dominio creado en el árbol se llama dominio raíz y a los que se agregan a un dominio
+                existente se les llama secundarios. Los dominios que forman el árbol se enlazan entre ellos a
+                través de relaciones de confianza, que se estudiarán más adelante.
+                La principal razón de crear una estructura de árbol es por la necesidad de dividir la información
+                de la red, que suele ocurrir solamente a grandes empresas con múltiples localizaciones
+                geográficas.
+                 <h3>Bosque</h3>
+                 Un bosque es un conjunto de uno o más árboles, conectados entre los dominios raíz de dichos
+                 árboles, a través de relaciones de confianza bidireccionales y transitivas.
+                 Si hay más de un árbol en el bosque, estos no forman un espacio de nombres común, es decir,
+                 tienen nombres de dominios diferentes e independientes.
+                 Cuando se instala el primer controlador de dominio en la organización se crea el dominio raíz
+del boque, que contiene la configuración y el esquema del bosque.
+            </p>
+            <p>
+                <h2>Controlador de dominio</h2>
+                Un controlador de dominio es un servidor donde se almacena una réplica del directorio. En los
+controladores de dominio es donde se produce la autentificación de los usuarios.
+            </p>
+
+
+        </article>
+
+    </section>
+</body>
+
+</html>

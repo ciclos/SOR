@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title> Sistemas operativos monopuesto</title>
+  <meta charset="UTF-8">
+  <meta name="title" content="Actividades">
+  <meta name="description" content="Actividades">
+  <link href="../estilos/estilo-apuntes.css" rel="stylesheet" type="text/css" />
+  <link href="../estilos/estilo-comun.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header class="titulo">
+    <h1>Permisos en Linux</h1>
+  </header>
+
+  <section class="apuntes">
+    <article>
+      <h2> Usuarios en linux </h2>
+      <p>
+        
+        En linux todo archivo y directorio pertenece a un usuario y a un grupo. Cuando se crea un fichero o un directorio se 
+        le asigna como propietario el usuario que lo creó y como grupo el de este usuario.
+      </p>
+      <p>
+        Internamente Linux asigna a cada usuario un número denominado UID que lo identifica mas halla del nombre de
+        usuario.
+        <ul>
+          <li>Root o superusuario. Cuenta con todos los privilegios del sistema. Su UID es siempre 0.</li>
+          <li>Usuarios del sistema. No son usuarios en el sentido físico del término, sino que se generan para controlar
+            los servicios a los que pertenecen. Su UID está entre 1 y 1000.</li>
+          <li>Usuarios normales. Son las personas ( u otras entidades ) que se conectarán al sistema para usarlo y que,
+            normalmente, tienen un directorio dentro de home y un UID mayor de 1000.</li>
+        </ul>
+      </p>
+      <p>
+        <h2> Permisos </h2>
+
+        En los Sistemas Unix, la gestión de los permisos que los usuarios y los grupos de usuarios tienen sobre los
+        archivos y las
+        carpetas, se realiza mediante un sencillo esquema de tres tipos de permisos que son:
+        <ul>
+          <li>Permiso de lectura</li>
+          <li>Permiso de lectura</li>
+          <li>Permiso de ejecución</li>
+        </ul>
+        
+              
+        A todos los archivos y directorios del sistema se le asigna tres grupos de permisos: propietario, grupo y otros.
+        En realidad estos permisos se gestionan como grupos de tres bits, indicando si el usuario puede leer, escribir o
+        ejecutar, como se ve en la siguiente imagen:
+        <img src="imagenes/permisos.png" alt="" srcset="">
+        Podemos cambiar los permisos por medio del comando: <br>
+         chmod PERMISOS ARCHIVO.<br> 
+         Para dar los permisos anteriores a un archivo usando chmod escribiríamos lo siguiente: <i>chmod 640 archivo</i>.
+      </p>
+      <p>
+        <h2> Ficheros de configuración </h2>
+        Los principales archivos de control de los usuarios son: 
+        <ul>
+          <li> /etc/passwd: Contiene una linea por cada usuario. Esta linea tiene el siguiente esquema: login:x:UID:GID:información:directorio_personal:shell_de_inicio. El segundo campo siempre es x, porque la contraseña se guarda en el archivo /etc/shadow.
+          </li>
+          <li> /etc/shadow: Contiene las contraseñas de los usuarios en formato encriptado. Cada línea tiene el siguiente esquema: login:contraseña:ultimo_cambio:min:max:aviso:inactividad:exp
+          </li>
+          <li>   /etc/group: Contiene los grupos del sistema. Cada línea tiene el siguiente esquema: nombre:x:GID:usuarios.
+          </li>
+        </ul>
+       </p>
+       <p>
+        <h2> Comandos para gestión de usuarios </h2>
+        <ul>
+          <li>Creación de usuarios: useradd</li>
+          <li>Modificación de usuarios: usermod </li>
+          <li>Eliminación de usuarios: userdel</li>
+          <li>Creación de grupos: groupadd</li>
+          <li>Modificación de grupos: groupmod </li>
+          <li>Eliminación de grupos: groupdel </li>
+          <li>Añadir usuarios a un grupo: adduser</li>
+          <li>Quitar usuarios de un grupo: deluser</li>
+          <li>Cambio de permisos: chmod</li>
+          <li>Cambio de propietario: chown</li>
+          <li>Cambio de grupo: chgrp</li>
+        </ul>
+       </p>
+    </article>
+
+  </section>
+</body>
+
+</html>
