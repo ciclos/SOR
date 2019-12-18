@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Gestión remota de usuarios</title>
+  <meta charset="UTF-8">
+  <meta name="title" content="Actividades">
+  <meta name="description" content="Actividades">
+  <link href="../estilos/estilo-actividades.css" rel="stylesheet" type="text/css" />
+  <link href="../estilos/estilo-comun.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header class="titulo">
+    <h1>Actividades: Gestión de usuarios en Linux</h1>
+  </header>
+  <nav class="navegacion">
+
+  </nav>
+  <section class="actividades">
+    <article class="ejercicio">
+      El instituto ha perdido su servidor y necesitamos volver a crear la estructura de
+      carpetas compartidas. Crea una red en GNS3 para simular esta situación. Crea las siguientes redes:
+      <ul>
+        <li>192.168.0.0/24. Contiene el servidor.</li>
+        <li>192.168.1.0/24. Para los equipos de primero. Pon dos WinXP</li>
+        <li>192.168.2.0/24. Para los equipos de segundo. Pon dos WinXP</li>
+      </ul>
+
+      <ul>
+        <li>Crea un dominio llamado smr.com </li>
+        <li>Crea los grupos: primero y segundo</li>
+        <li>Crea 30 usuarios para los alumnos de primero y 15 para los de segundo. Asignalos a los grupos adecuados</li>
+        <li>Crea usuarios profesores. Cada profesor da un modulo de segundo y otro de primero.</li>
+        <li>Crea los directorios MODULOS, MODULOS/PRIMERO y MODULOS/SEGUNDO. Crea una estructura de directorios para
+          almacenar la información de todos los modulos, de ambos cursos.</li>
+        <li>Asigna permisos a los alunnos de tal forma que puedan entrar en las carpetas segun sean de primero o
+          segundo, solo para leer</li>
+        <li>Asigna permisos a los profesores de tal forma que tengan permiso de escritura y lectura en los directorios
+          de sus modulos</li>
+        <li>Ni los alumnos, ni los profesores pueden borrar los directorios principales de los cursos y los modulos.
+        </li>
+      </ul>
+      <ul class="ampliacion">
+        <li>
+          Crea el grupo repetidores que puede acceder a ambos cursos.
+        </li>
+        <li>
+          Crea un script en Windows para crear dentro de cada directorio de los modulos, un directorio llamado TRABAJOS
+          y dentro de este directorios llamados ALUMNO1, ALUMNO2, etc.
+          Estos ultimos serán 15 o 30 según sean de primero o de segundo.
+        </li>
+        <li>
+          Asigna permisos de lectura y escritura en los directorios ALUMNO a cada usuario alumno. El resto de usuarios
+          alumno no deben poder entrar a esa carpeta.
+        </li>
+      </ul>
+      <ul class="ampliacion">
+        <li>
+          Busca información sobre el bucle for en batch y modifica el anterior script.
+        </li>
+      </ul>
+
+    </article>
+
+
+  </section>
+</body>
+
+<script type="text/javascript" src="../js/funciones.js">
+</script>
+
+</html>
