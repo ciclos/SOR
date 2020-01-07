@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Sistemas operativos en red</title>
+  <meta charset="UTF-8">
+  <meta name="title" content="Actividades">
+  <meta name="description" content="Actividades">
+  <link href="../estilos/estilo-apuntes.css" rel="stylesheet" type="text/css" />
+  <link href="../estilos/estilo-comun.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header class="titulo">
+    <h1> Unidades Organizativas </h1>
+  </header>
+  <section class="apuntes">
+    <article>
+      <p>
+        Las unidades organizativas ( OU ) son el mecanismo mas común de organización de Active Directory. Crearlas es tan sencillo
+        como apretar un botón y tienen el aspecto de directorios. Para añadir un objeto a una unidad organizativa podemos
+        arrastrarla desde el administrador dentro de la unidad. Igualmente podemos crear los objetos dentro de las OU.
+      </p>
+      <img src="imagenes/unidad-organizativa.png" alt="" srcset="">
+  
+      <p>
+        Las unidades organizativas estan protegidas por defecto contra el borrado accidental, por lo que si queremoes borrarlas debemos primero activar
+        la propiedades avanzadas y después modificar esta caracteristica en la pestaña objeto. <br>
+        Para activar las propiedades avanzadas hacemos como se muestra en la siguiente imagen:
+      </p>
+      <img src="imagenes/verOpcionesAvanzadas.png" alt="" srcset="">
+      <p>
+        Seguidamente podremos acceder a estas propiedades.
+      </p>
+      <img src="imagenes/eliminarOU-11.png" alt="" srcset="">
+      <p>
+        Y quitamos la protección en la pestaña objeto:
+      </p>
+      <img src="imagenes/eliminarOU-2.png" alt="" srcset="">
+      <p>
+        Con esto ya podemos eleminar sin problemas la OU.
+      </p>
+      <img src="imagenes/eliminarOU-1.png" alt="" srcset="">
+    </article>
+   
+
+  </section>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+
+</div>
+
+<script type="text/javascript" src="../js/funciones.js">
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Sistemas operativos en red</title>
+  <meta charset="UTF-8">
+  <meta name="title" content="Actividades">
+  <meta name="description" content="Actividades">
+  <link href="../estilos/estilo-apuntes.css" rel="stylesheet" type="text/css" />
+  <link href="../estilos/estilo-comun.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header class="titulo">
+    <h1> Directivas de Grupo Global ( GPO ) </h1>
+  </header>
+  <section class="apuntes">
+    <article>
+      <h2>Como se aplican las GPO</h2>
+      <p>
+        Podremos entender las directivas del sistema como un mecanismo mediante el cual
+        múltiples parámetros del entorno de trabajo son configurados por el administrador del
+        sistema, de modo que todos los usuarios deberán asumir dichas configuraciones con
+        independencia de sus preferencias.
+      </p>
+      <p>
+        Existen miles de directivas de grupo que pueden ser configuradas, y cada una de ellas
+        permitirá configurar algún parámetro del entorno de trabajo del equipo y de sus
+        usuarios. A continuación se muestran algunas que pueden ser utiles para establecer la configuración de los
+        usuarios.
+      </p>
+      <p>Curiosamente, y pese a su nombre, las Directivas de Grupo no pueden ser asociadas a un grupo de usuarios o
+        grupos de equipos, pues
+        tan sólo son aplicables a Sitios, Dominios o Unidades Organizativas, y el resultado de su aplicación afecta a
+        los usuarios y a los equipos
+        del dominio.
+      </p>
+      <p>
+        La Directiva de Grupo se aplica de manera jerárquica desde el grupo menos restrictivo (Sitio) al grupo más
+        restrictivo (Unidad
+        Organizativa). La Directiva de Grupo también es acumulativa. Los contenedores de servicio de directorio
+        secundarios heredan la
+        Directiva de Grupo de los contenedores primarios y el procesamiento de la Directiva de Grupo tiene lugar en el
+        siguiente orden: Sitio,
+        Dominio y Unidad Organizativa. Esto significa que, si se ha asignado una Directiva de Grupo determinada a un
+        contenedor primario de
+        alto nivel, esa Directiva de Grupo se aplica a todos los contenedores por debajo de dicho contenedor primario,
+        incluidos los objetos
+        equipo y usuario de cada contenedor. Sin embargo, si especifica de manera explícita una Directiva de Grupo para
+        un contenedor
+        secundario, dicha directiva suplantará a la del contenedor primario, si es que son contradictorias, y se sumará
+        a la anterior si no lo son.
+      </p>
+      <p>
+        Para crear una GPO solo tenemos que hacer click derecho en una OU y seleccionar "crear GPO en este dominio y vincularlo aquí".
+      </p>
+      <img src="imagenes/crearGPO.png" alt="" srcset="">
+      <p>
+        Le damos un nombre
+      </p>
+      <img src="imagenes/crearGPO-2.png" alt="" srcset="">
+      <p>
+        Y nos aparece debejo de la OU y a la derecha, la podemos editar haciendo click derecho en cualquier de los dos lados.
+      </p>
+      <img src="imagenes/crearGPO-3.png" alt="" srcset="">
+      <p>
+        Una vez creada la GPO se aplica a todos los objetos ( usuarios, grupos, equipos u otras OU ) contenidas en la OU.
+      </p>
+
+    </article>
+    <article>
+      <h2>Herencia de directivas en el servidor</h2>
+      <p>
+        Derivado de todo lo anteior y teniendo en cuenta que el servidor pertence al dominio, toda politica aplicada al
+        dominio en su conjunto
+        se aplicará también al servidor, si no lo evitamos. Para evitar que las politicas se apliquen también al
+        servidor debemos abrir el editor
+        de directivas de grupo e indicar en OU "domain controllers" que se deshabilite la herencia.
+      </p>
+      <img src="imagenes/bloquearHerencia.png" alt="" srcset="">
+      <p>
+        Una vez hecho lo anterior podemos editar las directivas de todo el dominio libremente. Para ello debemos
+        seleccionar el apartado Default Domain Polacy
+        y darle a Editar. 
+      </p>
+      <img src="imagenes/editarDominio.png" alt="" srcset="">
+      <p>
+        Lo que nos llevará a una ventana similar a la que vimos en la edición de politicas locales.
+      </p>
+      <img src="imagenes/editorDirectivas.png" alt="" srcset="">
+      <p>
+        En la ventana anterior podemos observar que para la directiva de
+dominio por defecto (Default Domain Policy) podemos interactuar con directivas que pueden ser aplicadas a los usuarios del
+dominio (Configuración de usuario) y otras que pueden serlo a los equipos del dominio (Configuración del equipo). Las
+directivas que pueden ser definidas para cada tipo de objeto en general no son similares, si bien algunas de ellas sí son comunes; en
+caso de que definamos 2 políticas contradictorias en dos entradas similares, una en equipos y otra en usuarios, <b>prevalecerá la primera
+  de ellas</b>.
+  
+      </p>
+
+    </article>
+  </section>
+
+  <div id="myModal" class="modal">
+    <img class="modal-content" id="img01">
+  </div>
+  <script type="text/javascript" src="../js/funciones.js">
+  </script>
+</body>
+
+</html>

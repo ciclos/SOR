@@ -10,13 +10,81 @@ header.titulo {
 }
 
 img:not(.codigo){
-    width: 80%;
+    width: auto;
+    max-width: 90%;
+    position: relative;
     height: auto;
     margin: 1em auto;
     padding: 1em;
     display: block;
-    border: 1px solid rgb(0, 63, 105);
-    box-shadow: 5px -5px 5px -2px rgba(0,0,0,0.5);
+    /*border: 1px solid rgb(0, 63, 105);
+    /*box-shadow: 5px -5px 5px -2px rgba(0,0,0,0.5);*/
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-left: 2em; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    /*overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+  
+  /* Modal Content (image) */
+  img.modal-content {
+    margin: auto;
+    display: block;
+    width: auto;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  
+  @keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    left: 1em;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* -- modal imagenes --*/
+
+article{
+    max-width: 1000px;
+    min-width: 600px;
+    margin: 2em auto;
+}
+
+p{
+    margin-top: 0;
+}
+
+.imagen-grande{
+    width: 1000px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
 }
 
 codigo{

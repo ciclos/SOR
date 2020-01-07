@@ -92,13 +92,18 @@
         <h2>Bucle for</h2>
         La sintaxis del bucle for es: <br>
         <codigo>
-        La sintaxis normal del comando FOR es: <br>
-        FOR %var IN (lista) DO ( <br>
-        comando <br>
-        comando <br>
-        ... <br>
-        ) <br>
+          La sintaxis normal del comando FOR es: <br>
+          FOR /L %%var IN (inicio,incremento,fin) DO ( <br>
+          comando <br>
+          comando <br>
+          ... <br>
+          ) <br>
         </codigo>
+        inicio, es el valor inicial, incremento es la cantidad a sumar, y fin es la
+        cantidad a detenerse, por ejemplo: <br>
+        <codigo>FOR /L %%i IN (0,1,10) DO (echo %%i)</codigo>
+
+        imprimira : 0 1 2 3 4 5 6 7 8 9 10. 
       </p>
 
     </article>
