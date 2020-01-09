@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title> Sistemas operativos monopuesto</title>
+  <meta charset="UTF-8">
+  <meta name="title" content="Actividades">
+  <meta name="description" content="Actividades">
+  <link href="../estilos/estilo-apuntes.css" rel="stylesheet" type="text/css" />
+  <link href="../estilos/estilo-comun.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header class="titulo">
+    <h1>Programación en Batch</h1>
+  </header>
+
+  <section class="apuntes">
+    <article>
+      <h2> Archivos .bat </h2>
+      <p>
+        En Microsoft Windows un archivo batch es un archivo de procesamiento
+        por lotes. Se trata de archivos de texto sin formato, guardados con la extensión BAT
+        que contienen un conjunto de comandos MS-DOS.<br>
+        Este archivo puede ejecutarse desde la línea de comandos o haciendo doble click en él.
+
+        <h2>Estructura básica</h2>
+        Uno de los script más basico que puede escribirse es el siguiente:
+        <codigo>
+          @echo off<br>
+          echo Hola Mundo<br>
+          pause<br>
+          exit<br>
+        </codigo>
+        En este script podemos encontrar varios comandos utiles de control del mismo, como son:
+        <ul>
+          <li>@echo off. Con esta instrucción no se imprime por pantalla los comandos que esta ejecutando el script</li>
+          <li>pause. Detiene la ejecución a la espera de que se presione una tecla. </li>
+          <li>exit. Termina la ejecución</li>
+        </ul>
+        <h2>Variables</h2>
+        Las variables se asignan por medio de la palabra reservada <b>set</b>. Por ejemplo, el siguiente script asigna
+        una variable y despues imprime por pantalla su contenido.
+        <codigo>
+          @echo off<br>
+          set Nombre= Harvin Tellez <br>
+          echo %Nombre% <br>
+          pause
+        </codigo>
+        <h2>Obtener valores por teclado</h2>
+        Si queremos que el usuario nos de información por teclado usaremos una construcción parecida a la anterior, como
+        se ve en el siguiente ejemplo:
+        <codigo>
+          @echo off<br>
+          set /p Nombre=Escriba su Nombre: <br>
+          echo %Nombre% <br>
+          pause
+        </codigo>
+        En este script se mostrará el mensaje: Escriba su Nombre. El script se quedará esperando la entrada por teclado.
+        <h2>Instrucción GOTO y condicional</h2>
+        La instrucción goto nos permite saltar de una línea a otra dentro del codigo. Para ello primero necesitamos
+        etiquetar puntos
+        de aterrizaje de la instrucción. Esto se hace anteponiendo dos puntos a un nombre ( el nombre del punto de
+        aterrizaje).
+        Después simplemente se nombra ese punto de aterrizaje después de la instrucción goto. <br>
+        Esta instrucción se suele usar en conjunción con el condicional que permite comprobar una condición, de tal
+        forma que si se
+        cumple saltamos y en caso contrario no. Las comparaciones mas comunes son las siguientes:
+        <ul>
+          <li>if variable==valor (para expresar si la variable es igual a valor haz esto)</li>
+          <li>if variable LSS valor (para expresar si la variable es menor a valor haz esto)</li>
+          <li>if variable GTR valor (para expresar si la variable es mayor a valor haz esto)</li>
+          <li>if variable LEQ valor (para expresar si la variable es menor o igual haz esto)</li>
+          <li>if variable GEQ valor (para expresar si la variable es mayor o igual haz esto)</li>
+        </ul>
+
+        <br>A continuación podemos ver un ejemplo sencillo de uso de estas dos instrucciones.
+        <codigo>
+          @echo off <br>
+          set /p variable=¿Cuantos son 2 +2 ? <br>
+          cls <br>
+          if %variable%==4 goto correcto else goto incorrecto<br>
+          :incorrecto
+          echo te has equivocado <br>
+          goto terminar
+          :correcto <br>
+          echo correcto! <br>
+          :terminar
+          pause <br>
+          exit
+        </codigo>
+        <h2>Bucle for</h2>
+        La sintaxis del bucle for es: <br>
+        <codigo>
+          La sintaxis normal del comando FOR es: <br>
+          FOR /L %%var IN (inicio,incremento,fin) DO ( <br>
+          comando <br>
+          comando <br>
+          ... <br>
+          ) <br>
+        </codigo>
+        inicio, es el valor inicial, incremento es la cantidad a sumar, y fin es la
+        cantidad a detenerse, por ejemplo: <br>
+        <codigo>FOR /L %%i IN (0,1,10) DO (echo %%i)</codigo>
+
+        imprimira : 0 1 2 3 4 5 6 7 8 9 10. 
+      </p>
+
+    </article>
+
+  </section>
+</body>
+
+</html>

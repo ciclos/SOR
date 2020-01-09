@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Sistemas operativos en red</title>
+  <meta charset="UTF-8">
+  <meta name="title" content="Actividades">
+  <meta name="description" content="Actividades">
+  <link href="../estilos/estilo-apuntes.css" rel="stylesheet" type="text/css" />
+  <link href="../estilos/estilo-comun.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header class="titulo">
+    <h1> Comandos para administración del servidor </h1>
+  </header>
+  <section class="apuntes">
+    <article style="column-count:1">
+      <p>
+        <h2>NET SHARE</h2>
+
+        Este comando nos permite crear carpetas compartidas desde linea de comandos o desde un script. Las opciones mas
+        usuales de este comando son la siguientes:
+
+        <ul>
+          <li>
+            <b>Net share</b> Sin argumentos este comando nos muestra los objetos compartidos por el servidor.
+          </li>
+          <li>
+            <b>net share nombre_en_la_red=c:\micarpeta</b> Comparte un carpeta en la red con el nombre_en_la_red
+            especificado.
+          </li>
+          <li>
+            <b>net share nombre_en_red /delete</b> Para dejar de compartir la carpeta en la red.
+          </li>
+        </ul>
+      </p>
+      <p>
+        <h2>ICACLS</h2>
+        Este comando permite gestionar los derechos sobre los directorios. Tiene multitud de opciones, a continuación se
+        listan
+        convinaciones utiles:
+        <ul>
+          <li>
+            <b>icacls ruta_carpeta</b> Muestra los permisos sobre ruta_carpeta
+          </li>
+          <li>
+            <b>icacls ruta_carpeta /inheritance:r</b> Elimina los permisos heredados al crear el directorio.
+          </li>
+          <li><b>icacls ruta_carpeta /grant usuario:(OI)(CI)F /T</b> Da permisos de acceso total al usuario en la
+            ruta_carpeta especificada. (OI)(CI) indican que se
+            hereden los permisos a objetos y directorios. El acceso total viene especificado por la siguiente letra (
+            que
+            puede ser una lista separada por comas), que, para permisos simples, puede ser una de las siguientes:
+            <ul>
+              <li>F. Acceso total</li>
+              <li>M. Acceso de modificación</li>
+              <li>RX. Lectura y ejecución</li>
+              <li>R. Solo lectura</li>
+              <li>W. Solo escritura</li>
+            </ul>
+            Consulta la propia ayuda del comando para conocer el resto de opciones del comando.
+          </li>
+        </ul>
+        La forma mas sencilla, mediante comandos, de crear una carpeta compartida y dar permisos a un solo usuario sería
+        la siguiente:
+        <codigo>
+          mkdir carpetaCompartida <br>
+          net share compartidaEnRed=c:\carpetaCompartida <br>
+          icacls c:\carpetaCompartida /inheritance:r <br>
+          icacls c:\carpetaCompartida /grant usuario:(OI)(CI)F /T
+        </codigo>
+      </p>
+      <p>
+        <h2>DSADD</h2>
+        Este comando nos permite crear objetos nuevos en el active directory. Después de dsadd debemos indicar que tipo
+        de objeto vamos a crear con alguna de las siguientes opciones:
+        <ul>
+          <li>User. Usuarios</li>
+          <li>Group. Grupos</li>
+          <li>OU. Unidades organizativas.</li>
+          <li></li>
+        </ul>
+        Para crear cualquier objeto debemos indicar el nombre completo, es decir, en que dominio y unidad organizativa
+        se crea. Por ejemplo para crear una OU llamada "primero" justo debajo del dominio principal ( smr.com )
+        escribiriamos los siguiente:
+        <codigo>
+          dsadd ou "OU=primero,DC=smr2,DC=com"
+        </codigo>
+        Fijate que la forma de indicar la ruta es escribiendo las partes y especificando a que corresponde cada una. En
+        el ejemplo anterior las partes del dominio se indican con "DC" y las de la unidad organizativa con "OU".
+        
+      </p>
+      <p>
+        Una vez creada la unidad organizativa anterior podemos crear un usuario dentro de ella, de la siguiente forma:
+        <codigo>
+          dsadd user "cn=alumno1, ou=primero, dc=smr2, dc=com" -pwd "pass*2"
+        </codigo>
+        Fijate que el nombre del usuario viene precedido por "CN" y que se ha usado la opción -pwd para indicar la
+        contraseña del mismo.
+        <p>
+          Una opción util es: <b>-mustchpwd yes </b>
+          que obligará al usuario a cambiar la contraseña la primera vez que inicie sesión.
+        </p>
+      </p>
+      <p>
+        Igualmente puedo crear grupos con este comando:
+        <codigo>
+          dsadd group "cn=SOM, ou=primero, dc=smr2, dc=com"
+                </codigo>
+        La opción -members nos permite crear un grupo con usuarios dentro:
+        <codigo>
+          dsadd group "cn=SOM, ou=primero, dc=smr2, dc=com" -members "cn=alumno1, ou=primero, dc=smr2, dc=com" "cn=alumno2, ou=primero, dc=smr2, dc=com"
+        </codigo>
+      </p>
+      <p>
+        <h2>DSMOD</h2>
+        No sirve para modificar objetos, por ejemplo para añadir el alumno1 al grupo anterior escribiriamos:
+        <codigo>
+          dsmod group "cn=SOM, ou=primero, dc=smr2, dc=com" -addmbr "cn=alumno1, ou=primero, dc=smr2, dc=com"
+        </codigo>
+        La opcion -addmbr nos permite añadir miembros al grupo.
+      </p>
+      <p>
+        Como te habrás dado cuenta esto es mas complicado que hacerlo directamente en el Administrador de Active
+        Directory. Pero es
+        que estos comandos se usan para crear scripts que permitan automatizar tareas para grandes cantidades de
+        objetos, como
+        la inclusión de muchos usuarios al mismo tiempo. Por ejemplo, el siguiente script crea e incluye 30 alumnos en
+        el grupo
+        primero. Una vez creado el script me puede servir como plantilla para cualquier otra acción de este tipo:
+        <codigo>
+          for /L %%d in (1, 1, 30) do ( <br>
+          dsadd user "cn=alumno%%d, ou=primero, dc=smr2, dc=com" -pwd "pass*2" <br>
+          dsmod group "cn=SOM, ou=primero, dc=smr2, dc=com" -addmbr "cn=alumno%%d, ou=primero, dc=smr2, dc=com" <br>
+          )
+        </codigo>
+        El codigo anterior crea 30 usuarios llamados: alumno1, alumno2, ..., alumno30, dentro del grupo SOM, que esta
+        dentro de la OU primero.
+        Podemos completarlo incluyendo la creación de un directorio para cada usuario y dandole permisos al usuario
+        sobre el. Fijate en el siguiente codigo:
+        <codigo>
+          for /L %%d in (1, 1, 30) do ( <br>
+          dsadd user "cn=alumno%%d, ou=primero, dc=smr2, dc=com" -pwd "pass*2" <br>
+          dsmod group "cn=SOM, ou=primero, dc=smr2, dc=com" -addmbr "cn=alumno%%d, ou=primero, dc=smr2, dc=com" <br>
+          mdkir c:\MODULOS\PRIMERO\SOM\alumno%%d <br>
+          icacls c:\MODULOS\PRIMERO\SOM\alumno%%d /inheritance:r <br>
+          icacls c:\MODULOS\PRIMERO\SOM\alumno%%d /grant alumno%%d:(OI)(CI)F
+          )
+        </codigo>
+      </p>
+      <p>
+        <h2>DSRM</h2>
+        Borra los permisos sobre los objetos indicados. Por ejemplo, para borrar todo lo realizado sobre smr.com
+        escribiriamos los siguiente:
+        <codigo>
+          dsrm -subtree -noprompt "OU=wifi,DC=smr2,DC=com"
+        </codigo>
+      </p>
+<p>
+  <h2>DSQUERY</h2>
+  Nos permite hacer consultas sobre los objetos del directorio. Por ejemplo, si quisieramos buscar el usuario alumno4 dentro del dominio smr.com escribiriamos:
+  <codigo>
+    dsquery user DC=smr,DC=com -name alumno4
+  </codigo>
+  Este comando, si encuentra el objeto, devuelve el nombre canonico del objeto, en este caso: CN=alumno4,DC=smr,DC=com. En caso de no encontrarlo no devuelve nada.
+</p>
+    </article>
+  </section>
+
+  <div id="myModal" class="modal">
+    <img class="modal-content" id="img01">
+  </div>
+  <script type="text/javascript" src="../js/funciones.js">
+  </script>
+</body>
+
+</html>

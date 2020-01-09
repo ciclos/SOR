@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-  <title>Gestión remota de usuarios</title>
+  <title>Actividades</title>
   <meta charset="UTF-8">
   <meta name="title" content="Actividades">
   <meta name="description" content="Actividades">
@@ -12,7 +12,7 @@
 
 <body>
   <header class="titulo">
-    <h1>Actividades: Gestión de usuarios en Linux</h1>
+    <h1>Actividades: Gestión de Active Directory</h1>
   </header>
   <nav class="navegacion">
 
@@ -59,13 +59,105 @@
       </ul>
       <ul class="ampliacion">
         <li>
-          Añade una segunda tarjeta al servidor, conectada a la red de tu casa y conectacte por medio de escritorio remoto al 
-          servidor de la red GNS3 para gestionar todo. Además, modifica las maquinas virtuales para que enciendan sin pantalla.
+          Añade una segunda tarjeta al servidor, conectada a la red de tu casa y conectacte por medio de escritorio
+          remoto al
+          servidor de la red GNS3 para gestionar todo. Además, modifica las maquinas virtuales para que enciendan sin
+          pantalla.
         </li>
       </ul>
     </article>
+    <article class="ejercicio">
+      Crea un script que haga todo lo del ejercicio 1 de forma automática.
+      <ul class="ampliacion">
+        <li> Modifica el script anterior para que la cantidad de alumnos de cada grupo se
+          creen por medio de un for</li>
+        <li>Modifica el script anterior para que la cantidad de alumnos de cada grupo se
+          obtenga por parametros.</li>
+      </ul>
+      <div class="tooltip"><strong>&nbsp;&nbsp;!</strong></br>
+        <span class="tooltiptext">
+          <ul>
+            <li>
+              Para trabajar de forma mas comoda incluye al principio del script el borrado de todo lo que hace el script
+            </li>
+          </ul>
+        </span>
+      </div>
+    </article>
+    <article class="ejercicio">
+      Crea un script que cumpla los siguientes requisitos:
+      <ul>
+        <li>Pida al usuario del script un nombre de usuario.</li>
+        <li>Pida al usuario un nombre de grupo</li>
+        <li>Cree el usuario y lo meta en el grupo especificado</li>
+        <li>Cree un directorio para el usuario y le da todos los permisos sobre el</li>
+        <li>El script se ejecuta 5 veces y termina</li>
+      </ul>
+      <ul class="ampliacion">
+        <li> Modifica el script para comprobar que el usuario y grupo no existen antes de crearlos.</li>
+        <li>En caso de existir se le debe notificar al usuario</li>
+      </ul>
+    </article>
+    <article class="ejercicio">
+
+      La empresa NetFlowers esta compuesta por los siguientes departamentos:
+      <ul>
+        <li>Dirección. 4 personas.</li>
+        <li>Administración. 10 Personas.</li>
+        <li> Instaladores. 150 Personas</li>
+        <li>Almaceneros. 30 Personas.</li>
+        <li>Informatica. 5 Personas.</li>
+      </ul>
+      Se desea crear un dominio que permita hacer lo siguiente:
+      <ul>
+        <li>Debe ser posible compartir información entre todos los usuarios de cada departamento.</li>
+        <li> Todos los usuarios tendrán un sitio propio donde almacenar su información en el servidor.</li>
+        <li>Los departamentos no pueden ver la información de otros departamentos, excepto
+          Dirección, que puede ver la de todos y cada uno de sus empleados. Con la excepción de
+          que los integrantes de Dirección no pueden verse entre ellos.</li>
+        <li>Existen 4 adminstrativos que son los secretarios de dirección, que necesitan compartir
+          información con su directivo.</li>
+        <li>Solo los responsables de informatica y dirección tienen permiso para tocar el panel
+          de control de los equipos.</li>
+        <li>Todos los equipos salen a Internet por un proxy.</li>
+      </ul>
+      Crea un script que solucione el anterior problema
+
+    </article>
+    <article class="ejercicio">
+      La empresa de distribución de embutido PorkOnWheels quiere informatizar su empresa.
+      <ul>
+        <li>Tiene almacenes en 20 ciudades distintas y una oficina central en Madrid.
+        </li>
+        <li>En la oficina central trabajan el director, su secretario y 3 administrativos.
+        </li>
+        <li> En los almacenes siempre trabaja la misma cantidad de personas: 2 transportistas y un
+          almacenero.
+        </li>
+        <li>Los almaceneros registran cada dia las entradas y salidas de productos en una hoja de
+          excell, a la que los administrativos necesitan acceso para controlar que está pasando.
+        </li>
+        <li> El director quiere que los tranportistas puedan compartir el albaran de entrega con
+          los adminstrativos.
+        </li>
+        <li> Además, el director se reserva el derecho de poder ver todos los documentos y modificarlos.
+        </li>
+        <li> El director quiere tener un servidor central que permita almacenar la información.
+        </li>
+      </ul>
 
 
+      Después de hablar con el director y de explicarle lo que vas a hacer, habeis llegado a las
+      siguientes conclusiones:
+      <ul>
+        <li>Los almaceneros pueden ver el albaran de entregada de los tranportistas, pero no pueden
+          borrarlo.</li>
+        <li>Los tranportistas una vez guardado el albaran no lo pueden borrar.</li>
+        <li>Los administrativos pueden leer el registro de entradas de los almaceneros, pero no
+          lo pueden modificar.</li>
+      </ul>
+      Crea un script que solucione el problema anterior
+    </article>
   </section>
 </body>
 

@@ -4,6 +4,12 @@ header.titulo {
     color: white;
 }
 
+li b:after{
+    content: ' \21A6' ; 
+    color: rgb(0, 63, 105);
+    font: 1em tahoma;
+}
+
 .titulo h1{
     text-align: center;
     font: 2em arial;
@@ -88,6 +94,8 @@ p{
 }
 
 codigo{
+    font: 0.9em "Courier New";
+    line-height: 1.3em;
     color: rgb(200, 255, 0);
     background: black;
     font: arial;
@@ -164,7 +172,7 @@ section.index ol ul{
 
 .tooltip {
     position: absolute;
-    top: 1em;
+    top: 0em;
     right: 1em;
     display: inline-block;
 	background: rgb(255, 196, 0);
