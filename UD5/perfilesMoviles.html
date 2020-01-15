@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Sistemas operativos en red</title>
+  <meta charset="UTF-8">
+  <meta name="title" content="Actividades">
+  <meta name="description" content="Actividades">
+  <link href="../estilos/estilo-apuntes.css" rel="stylesheet" type="text/css" />
+  <link href="../estilos/estilo-comun.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header class="titulo">
+    <h1>Perfiles moviles </h1>
+  </header>
+  <section class="apuntes">
+    <article>
+      <p>
+        <h2>Cuentas de usuario Vs perfiles de usuario</h2>
+        Un perfil de usuario no es lo mismo que una cuenta de usuario, que se usa para iniciar sesión en Windows. Las
+        preferencias de cada usuario se guardan en un perfil de usuario, (entiendase carpeta) que el Sistema Operativo
+        utiliza para configurar el escritorio cada vez que los usuarios inician sesión. Contiene la configuración para
+        fondos de escritorio, protectores de pantalla, preferencias de puntero, configuración de sonido y otras
+        características. Los perfiles de usuario permiten que se usen sus preferencias personales siempre que inicie
+        sesión en Windows. El perfil de usuario recolecta las opciones de configuración que hacen que el equipo tenga el
+        aspecto y funcione de la manera que usted desee. Cada cuenta de usuario tiene por lo menos un perfil de usuario
+        asociado.
+      </p>
+      <p>
+        <h2>Perfiles moviles</h2>
+       Cuando se trabaja con usuarios de dominio es normal tener perfiles moviles, para atender a los usuarios que usan diferentes equipos
+       pero el mismo usuario en todos ellos. Este tipo de perfiles permite tener siempre el mismo entorno y configuraciones independientemente de 
+       la maquina que se use. <br>
+       Los datos de estos perfiles se almacenan en carpetas compartidas en el servidor, de tal forma que al iniciar sesión esta información se 
+       descarga al equipo y al cerrar sesión el perfil se guarda en el servidor. Por tanto lo primero que debemos hacer es crear una carpeta compartida
+       en el servidor, con acceso para todos los usuarios, como se ve a continuación.
+       <img src="imagenes/perfilesMoviles-1.png" alt="">
+       Fijate que al nombre en la red del directorio se le ha añadido el simbolo $. Esto provoca que el directorio no salga en el listado de objetos compartidos
+       en la red, de tal forma que los usuarios no pueden saber que existe, aunque se puede acceder como a cualquier otro directorio compartido.
+      </p>
+      <p>
+        Una vez tenemos donde albergar los perfiles, nos vamos a <b>Usuarios y Equipos de Active Directory</b> y dentro de las propiedades de cada usuario ponemos 
+        la ruta a la carpeta compartida, seguida de \%username%. Esta ultima cadena se va a sustituir automaticamente por el nombre del usuario, lo que va a simplificar
+        la configuración, pues podemos solo copiar y pegar ese ruta para todos los usuarios.
+        <img src="imagenes/perfilesMoviles-2.png" alt="">
+      
+      </p>
+      <p>
+        La primera vez que el usuario inicie sesión en el dominio se creara una carpeta dentro de la carpeta compartida que hemos creado para ello.
+        <img src="imagenes/perfilesMoviles-3.png" alt="">
+      
+      </p>
+
+    </article>
+
+    </article>
+
+  </section>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+
+  </div>
+
+  <script type="text/javascript" src="../js/funciones.js">
+  </script>
+</body>
+
+</html>

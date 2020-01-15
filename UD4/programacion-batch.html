@@ -16,7 +16,7 @@
   </header>
 
   <section class="apuntes">
-    <article>
+    <article style="column-count: 1;">
       <h2> Archivos .bat </h2>
       <p>
         En Microsoft Windows un archivo batch es un archivo de procesamiento
@@ -47,6 +47,21 @@
           echo %Nombre% <br>
           pause
         </codigo>
+        <h2>Parametros</h2>
+        Los parametros ( o argumentos) son variables que se pueden pasar al script cuando se ejecuta, es decir, al hacer
+        la
+        llamada desde la linea de comandos. Por ejemplo, un hipotetico script que escribe en pantalla un mensaje pasado
+        por parametros
+        se ejecutaría de la siguiente forma:
+        <codigo>
+          sacarPorPantalla.bat "este es el mensaje que saldria por pantalla"
+        </codigo>
+        El contenido del script sería el siguiente:
+        <codigo>
+          echo %1
+        </codigo>
+        Donde %1 es el nombre del parametro a sacar por pantalla.
+
         <h2>Obtener valores por teclado</h2>
         Si queremos que el usuario nos de información por teclado usaremos una construcción parecida a la anterior, como
         se ve en el siguiente ejemplo:
@@ -103,7 +118,7 @@
         cantidad a detenerse, por ejemplo: <br>
         <codigo>FOR /L %%i IN (0,1,10) DO (echo %%i)</codigo>
 
-        imprimira : 0 1 2 3 4 5 6 7 8 9 10. 
+        imprimira : 0 1 2 3 4 5 6 7 8 9 10.
       </p>
 
     </article>
