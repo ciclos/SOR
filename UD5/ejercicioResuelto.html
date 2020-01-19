@@ -53,6 +53,39 @@
       En este <a href="ejemplo.bat">enlace</a> puedes ver la solución al ejercicio comentada. Abrelo con un editor de codigo 
       (NotePad++, sublime, Visual Studio Code,... ) para que sea mas facil de leer. Pruebalo en tu Active Directory, teniendo en cuenta que debes modificar
       el dominio  del script con el tuyo propio.
+      <p>
+        Para resolver la situación, una vez estudiado el problema, se aborda por partes. A continuación se presentan las secciones mas importantes del script.
+      </p>
+      <p>
+        <h3> Directorio principal </h3>
+        Primero se crean los directorios. Para simplificar la configuración de permisos, primero se configura la principal y despues se crean los directorios internos,
+        para que estos directorios hereden los permisos de la carpeta contenedora. Si no lo hicieramos así, es decir, si creamos primero toda la estructura de directorios,
+        tendriamos que otorgar todos los permisos a posteriori sobre todas las carpetas. Lo que implicaria repetir los primeros pasos sobre todos los directorios.
+      </p>
+      <img src="imagenes/ejemploScript-1.png" alt="">
+      <p>
+        <h3>Unidades organizativas</h3>
+        Como vamos a crear muchos usuarios, los organizaremos en unidades. Creamos una unidad general, llamada wifi, y otras dos dentro de esta para revisores e instaladores.
+      </p>
+      <img src="imagenes/ejemploScript-2.png" alt="">
+      <p>
+        <h3>
+          Grupos.
+        </h3>
+        Para simplificar la asignación de permisos creamos grupos. Esto nos permitirá asignar el permisos a las carpetas de un solo golpe, en vez de tener que 
+        ir que asignarlos uno por uno a cada revisor y cada instalador.
+      </p>
+      <img src="imagenes/ejemploScript-3.png" alt="">
+      <p>
+        <h3>Permisos</h3>
+        Asignamos permisos sobre las carpetas contenedoras.
+      </p>
+      <img src="imagenes/ejemploScript-4.png" alt="">
+      <p>
+        <h3>Creación masiva de usuarios</h3>
+        Creamos todos los usuarios revisores e instaladores, además de crear sus directorios y darles permisos.
+      </p>
+      <img src="imagenes/ejemploScript-5.png" alt="">
     </article>
    
 

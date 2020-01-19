@@ -1,4 +1,3 @@
-rem quitamos el echo de los comandos
 @echo off
 
 rem Esto lo hago para que cada vez que ejecute el script se borre todo.
