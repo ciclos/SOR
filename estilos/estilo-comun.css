@@ -103,7 +103,7 @@ codigo{
     margin: 0.5em;
     padding: 0.3em;
 }
-
+/*
 .apuntes a, .index a{
     text-decoration: none;
     color: black;
@@ -114,7 +114,7 @@ codigo{
     color: rgb(255, 136, 0);
    
 }
-
+*/
 section.index>ol>li{
     padding-bottom:1em;
 }

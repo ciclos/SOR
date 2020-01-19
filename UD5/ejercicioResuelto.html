@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Sistemas operativos en red</title>
+  <meta charset="UTF-8">
+  <meta name="title" content="Actividades">
+  <meta name="description" content="Actividades">
+  <link href="../estilos/estilo-apuntes.css" rel="stylesheet" type="text/css" />
+  <link href="../estilos/estilo-comun.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header class="titulo">
+    <h1> Ejemplo de gestión de usuarios y recursos compartidos </h1>
+  </header>
+  <section class="apuntes">
+    <article style="column-count: 1;">
+      <p>
+        <h2>Enunciado
+
+        </h2>
+        Crea un script que cree la siguiente estructura de directorios:
+        <ul>
+          <li>WifiAGogo
+            <ul>
+              <li>Instaladores
+                <ul>
+                  <li>JefeInstaladores</li>
+                  <li> Instaladores 1 al 20</li>
+                </ul>
+              </li>
+              <li> Revisores
+                <ul>
+                  <li>JefeRevisores</li>
+                  <li> Revisores 1 al 10</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        Ten en cuenta las siguientes restricciones:
+        <ul>
+          <li>WifiAGogo es una carpeta compartida para todos los usuarios, que solo pueden leerla, pero no pueden borrar, ni crear mas directorios.</li>
+          <li>Instaladores es solo accesible por los instaladores y revisores solo por los revisores.</li>
+          <li>JefeInstaladores tiene control total sobre las carpetas de instaladores. </li>
+          <li>JefeRevisores tiene control total sobre las carpetas de revisores. </li>
+          <li>Los revisores y los instaladores solo pueden leer sus carpetas, pero no pueden hacer nada mas, ni crear nada, ni modificar nada dentro de ellas. </li>
+        </ul>
+
+      </p>
+      <h2>Solucion</h2>
+      En este <a href="ejemplo.bat">enlace</a> puedes ver la solución al ejercicio comentada. Abrelo con un editor de codigo 
+      (NotePad++, sublime, Visual Studio Code,... ) para que sea mas facil de leer. Pruebalo en tu Active Directory, teniendo en cuenta que debes modificar
+      el dominio  del script con el tuyo propio.
+    </article>
+   
+
+  </section>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+
+</div>
+
+<script type="text/javascript" src="../js/funciones.js">
+</script>
+
+</body>
+
+</html>
