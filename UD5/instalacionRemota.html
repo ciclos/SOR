@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Sistemas operativos en red</title>
+  <meta charset="UTF-8">
+  <meta name="title" content="Actividades">
+  <meta name="description" content="Actividades">
+  <link href="../estilos/estilo-apuntes.css" rel="stylesheet" type="text/css" />
+  <link href="../estilos/estilo-comun.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header class="titulo">
+    <h1> Instalacion remota de software</h1>
+  </header>
+  <section class="apuntes">
+    <article>
+      <p>
+        <h2>Instalación remota</h2>
+          Es posible distribuir software por medio de la red si tenemos un dominio, de tal forma que desde el servidor
+          podamos indicar la instalación de un programa en un equipo o varios y mandar el archivo de instalación.
+      </p>
+      <p>
+        Para poder llevar a cabo una distribución de software es necesario que el paquete de instalación sea de tipo .msi.
+        En caso de que no podamos encontrar el programa en este tipo de empaquetado, se pueden usar programas
+        que permiten convertir un .exe a un .msi
+      </p>
+      <p>
+        La distribución de software se configura por medio de una directiva de grupo, de forma que nos iremos a la unidad
+        organizativa que contenga el conjunto de usuarios o equipos a los que queremos aplicar la distribución de software, en
+        nuestro caso la unidad SMR, y creamos una directiva nueva.
+        <img src="imagenes/instalarSoftware-0.png" alt="">
+        Creamos una directiva nueva y la editamos. En la edición elegimos <b>instalación de software</b> y creamos un paquete nuevo.
+        <img src="imagenes/instalarSoftware-1.png" alt="">
+        Para distribuir software hemos creado en el servidor una carpeta compartida, con nombre de red app$ ( el $ para que no salga
+        en el arbol de recursos compartidos) y, además, hemos dado control total al grupo <i>Todos</i>. La ruta a esta carpeta es lo 
+        que tenemos que indicar. En la carpeta previamente hemos copiados los paquetes .smi, en este caso el Winrar.
+        <img src="imagenes/instalarSoftware-2.png" alt="">
+        Cuando le demos a aceptar nos apereceran las opciones para el tipo de implementación, vamos a elegir avanzada.
+        <img src="imagenes/instalarSoftware-3.png" alt="">
+        En las ventanas siguientes marcamos las opciones que se indican a continuación.
+        <img src="imagenes/instalarSoftware-4.png" alt="">
+        Con esto ya tenemos la directiva creada. Para asegurarnos que se aplica, debemos hacer gpudate:
+        <img src="imagenes/actualizacionDirectivas.png" alt="">
+        De esta forma cuando un nuevo usuario, de la OU SMR, inicie sesión se instalará el paquete msi.
+        <img src="imagenes/instalarSoftware-5.png" alt="">
+      </p>
+    </article>
+  </section>
+
+  <div id="myModal" class="modal">
+    <img class="modal-content" id="img01">
+  </div>
+  <script type="text/javascript" src="../js/funciones.js">
+  </script>
+</body>
+
+</html>
