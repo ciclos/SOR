@@ -19,8 +19,9 @@
     <article>
       <h2> Usuarios en linux </h2>
       <p>
-        
-        En linux todo archivo y directorio pertenece a un usuario y a un grupo. Cuando se crea un fichero o un directorio se 
+
+        En linux todo archivo y directorio pertenece a un usuario y a un grupo. Cuando se crea un fichero o un
+        directorio se
         le asigna como propietario el usuario que lo creó y como grupo el de este usuario.
       </p>
       <p>
@@ -45,29 +46,42 @@
           <li>Permiso de lectura</li>
           <li>Permiso de ejecución</li>
         </ul>
-        
-              
+
+
         A todos los archivos y directorios del sistema se le asigna tres grupos de permisos: propietario, grupo y otros.
         En realidad estos permisos se gestionan como grupos de tres bits, indicando si el usuario puede leer, escribir o
         ejecutar, como se ve en la siguiente imagen:
         <img src="imagenes/permisos.png" alt="" srcset="">
         Podemos cambiar los permisos por medio del comando: <br>
-         chmod PERMISOS ARCHIVO.<br> 
-         Para dar los permisos anteriores a un archivo usando chmod escribiríamos lo siguiente: <i>chmod 640 archivo</i>.
+        chmod PERMISOS ARCHIVO.<br>
+        Para dar los permisos anteriores a un archivo usando chmod escribiríamos lo siguiente: <i>chmod 640 archivo</i>.
       </p>
       <p>
         <h2> Ficheros de configuración </h2>
-        Los principales archivos de control de los usuarios son: 
+        Los principales archivos de control de los usuarios son:
         <ul>
-          <li> /etc/passwd: Contiene una linea por cada usuario. Esta linea tiene el siguiente esquema: login:x:UID:GID:información:directorio_personal:shell_de_inicio. El segundo campo siempre es x, porque la contraseña se guarda en el archivo /etc/shadow.
+          <li> /etc/passwd: Contiene una linea por cada usuario. Esta linea tiene el siguiente esquema:
+            login:x:UID:GID:información:directorio_personal:shell_de_inicio. El segundo campo siempre es x, porque la
+            contraseña se guarda en el archivo /etc/shadow.
           </li>
-          <li> /etc/shadow: Contiene las contraseñas de los usuarios en formato encriptado. Cada línea tiene el siguiente esquema: login:contraseña:ultimo_cambio:min:max:aviso:inactividad:exp
+          <li> /etc/shadow: Contiene las contraseñas de los usuarios en formato encriptado. Cada línea tiene el
+            siguiente esquema: login:contraseña:ultimo_cambio:min:max:aviso:inactividad:exp
           </li>
-          <li>   /etc/group: Contiene los grupos del sistema. Cada línea tiene el siguiente esquema: nombre:x:GID:usuarios.
+          <li> /etc/group: Contiene los grupos del sistema. Cada línea tiene el siguiente esquema:
+            nombre:x:GID:usuarios.
           </li>
         </ul>
-       </p>
-       <p>
+      </p>
+      <p>
+        <h2>profile y bashrc</h2>
+        <p> Son dos archivos de configuración relacionados con la administración de los usuarios y están ubicados en el
+          directorio /etc. El archivo profile se ejecuta
+          cuando qualquier usuario inicia la sesión y bashrc cuando cualquier usuario ejecuta el programa bash.
+        </p>
+        <p>Aparte de los archivos generales, todos los usuarios contienen en su home una replica oculta de estos
+          archivos para su personalización.</p>
+      </p>
+      <p>
         <h2> Comandos para gestión de usuarios </h2>
         <ul>
           <li>Creación de usuarios: useradd</li>
@@ -76,13 +90,16 @@
           <li>Creación de grupos: groupadd</li>
           <li>Modificación de grupos: groupmod </li>
           <li>Eliminación de grupos: groupdel </li>
-          <li>Añadir usuarios a un grupo: adduser</li>
+          <li>Saber a que grupos pertenece un usuario: groups</li>
+          <li>Añadir usuarios a un grupo: adduser ( interactivo ) </li>
           <li>Quitar usuarios de un grupo: deluser</li>
           <li>Cambio de permisos: chmod</li>
           <li>Cambio de propietario: chown</li>
           <li>Cambio de grupo: chgrp</li>
+          <li>Cambiar password: chpasswd. (Desde root podemos cambiar el password de cualquier usuario así: echo
+            "usuario:pass" | chpasswd )</li>
         </ul>
-       </p>
+      </p>
     </article>
 
   </section>

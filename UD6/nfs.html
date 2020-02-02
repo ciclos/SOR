@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Sistemas operativos en red</title>
+    <meta charset="UTF-8">
+    <meta name="title" content="Actividades">
+    <meta name="description" content="Actividades">
+    <link href="../estilos/estilo-apuntes.css" rel="stylesheet" type="text/css" />
+    <link href="../estilos/estilo-comun.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <header class="titulo">
+        <h1> NFS </h1>
+    </header>
+    <section class="apuntes">
+        <article>
+            <p>
+                <h2>Para que sirve</h2>
+                El objetivo de NFS es que varios usuarios (o programas) de una red local puedan acceder a archivos y
+                directorios compartidos como si fuesen locales.
+            </p>
+            <p>
+                <h2>Instalación </h2>
+                La instalación en Ubuntu 14 Server se hace con los siguientes comandos:
+                <codigo>
+                    apt-get install nfs-kernel-server nfs-common rpcbind
+                </codigo>
+                A continuación reiniciamos la maquina y para comprobar si todo ha salido correctamente tecleamos los
+                siguientes comandos:
+                <codigo>
+                    grep nfs4 /proc/filesystems
+                </codigo>
+                Si la respuesta al anterior comando contiene nfs4 es que la instalación ha sido correcta.
+
+            </p>
+            <p>
+                Para instalarlo en el cliente procedemos de forma similar.
+                <codigo>
+                    apt-get install nfs-common rpcbind
+                </codigo>
+            </p>
+            <p>
+                <h2>Compartir</h2>
+                Los permisos sobre los directorios compartidos se configuran en el archivo /etc/exports. Cada carpeta
+                exportada debe estar en una línea diferente de este archivo, aunque una línea muy larga puede
+                continuarse en la línea siguiente poniendo al final una barra invertida ”\”. Las líneas tienen el
+                siguiente formato:
+                ruta cliente_1(opciones) cliente_2(opciones) ...
+
+                Para identificar a los clientes podemos usar una dirección IP o un nombre DNS. Tambien podemos usar *
+                para indicar cualquier usuario.<br>
+                Las opciones son las que establecen los permisos y pueden ser:
+                <ul>
+                    <li>ro(read-only): La carpeta compartida será de sólo lectura. Es la opción predeterminada</li>
+                    <li>rw (read-write): El usuario podrá realizar cambios en el contenido de la carpeta compartida</li>
+                    <li>wdelay: El servidor NFS no escribe en el disco si espera otra solicitud de forma inminente. Así
+                        se reducen los accesos a disco y mejora el rendimiento. Es la opción predeterminada, pero sólo
+                        funciona cuando usamos la opción sync</li>
+                    <li>no_wdelay: Deshabilita la característica anterior.</li>
+                    <li>root_squash: Evita que los usuarios con privilegios administrativos los mantengan, sobre la
+                        carpeta compartida, cuando se conectan remotamente. En su lugar, se les trata como a un usuario
+                        remoto más. Es la opción predeterminada.</li>
+                    <li>no_root_squash: Deshabilita la característica anterior.</li>
+                    <li>sync: Evita responder peticiones antes de escribir los cambios pendientes en disco. Es la opción
+                        predeterminada.</li>
+                    <li>async: Deshabilita la característica anterior. Mejora el rendimiento a cambio de que exista el
+                        riesgo de corrupción en los archivos o, incluso, en todo el sistema de archivos, si se produjese
+                        una interrupción del fluido eléctrico o un bloqueo del sistema.</li>
+                    <li>subtree_check: Cuando el directorio compartido es un subdirectorio de un sistema de archivos
+                        mayor, NFS comprueba los directorios por encima de éste para verificar sus permisos y
+                        características. Es la opción predeterminada.</li>
+                    <li>no_subtree_check: Deshabilita la característica anterior, lo que hace que el envío de la lista
+                        de archivos sea más rápido, pero puede reducir la seguridad.</li>
+                </ul>
+            </p>
+            <p>
+                Por ejemplo, supongamos que queremos crear un directorio compartido para cualquier usuario del sistema,
+                en el que
+                puedan leer y escribir. Creariamos el directorio de la siguiente forma:
+
+                <codigo>
+                    mkdir /compartido <br>
+                    chown nobody:nogroup /compartido <br>
+                    chmod -R 777 /compartido <br>
+                </codigo>
+                y escribiriamos lo siguiente en /etc/exports:
+                <codigo>
+                    /compartido *(rw,sync,no_subtree_check)
+                </codigo>
+            </p>
+            <p>
+                A continuación debemos reiniciar(o iniciar en su caso ) el servicio para que los cambios tengan efecto:
+                <codigo>
+                    /etc/init.d/nfs-kernel-server restart
+                </codigo>
+            </p>
+            <p>
+                <H2>Acceder a los directorios</H2>
+                Para acceder desde el cliente debemos crear un directorio para el punto de montaje, por ejemplo:
+                <codigo>
+                    mkdir -p /mnt/nfs/compartido
+                </codigo>
+                Damos permisos sobre el punto de montaje a todo el mundo:
+                <codigo>
+                    chmod -R 777 /mnt/nfs
+                </codigo>
+                Finalmente montamos el directorio compartido en el punto de montaje:
+                <codigo>
+                    mount 192.168.1.10:/compartido /mnt/nfs/compartido
+                </codigo>
+            </p>
+
+        </article>
+
+
+    </section>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+
+    </div>
+
+    <script type="text/javascript" src="../js/funciones.js">
+    </script>
+</body>
+
+</html>
