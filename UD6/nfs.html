@@ -43,14 +43,19 @@
             </p>
             <p>
                 <h2>Compartir</h2>
-                Los permisos sobre los directorios compartidos se configuran en el archivo /etc/exports. Cada carpeta
+                Los permisos sobre los directorios compartidos se configuran en el archivo <b>/etc/exports</b>. Cada
+                carpeta
                 exportada debe estar en una línea diferente de este archivo, aunque una línea muy larga puede
                 continuarse en la línea siguiente poniendo al final una barra invertida ”\”. Las líneas tienen el
                 siguiente formato:
-                ruta cliente_1(opciones) cliente_2(opciones) ...
+                <p> <br>
+                    ruta cliente_1(opciones) cliente_2(opciones) ... </p>
+
 
                 Para identificar a los clientes podemos usar una dirección IP o un nombre DNS. Tambien podemos usar *
-                para indicar cualquier usuario.<br>
+                para indicar cualquier usuario
+            </p>
+            <p>
                 Las opciones son las que establecen los permisos y pueden ser:
                 <ul>
                     <li>ro(read-only): La carpeta compartida será de sólo lectura. Es la opción predeterminada</li>
