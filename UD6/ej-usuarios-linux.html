@@ -59,32 +59,39 @@
     </article>
     <article class="ejercicio">
       <p>
-        Crea un script llamado crearDirectorio.sh que reciba por parametros la ruta de un directorio. Si no existe lo crea y muestra el mensaje: " El directorio talYtal se creo correctamente". 
+        Crea un script llamado crearDirectorio.sh que reciba por parametros la ruta de un directorio. Si no existe lo
+        crea y muestra el mensaje: " El directorio talYtal se creo correctamente".
         En caso de existir muestra: "El directorio talYtal ya existia"
       </p>
       <p>
-        Crea un script llamado crearUsuario.sh, que reciba por parametros el login de un usuario, su password y su directorio de home. <br>
-        Si el usuario no existe lo crea y muestra por pantalla: "El usuario talYtal se creó correctamente". Si el usuario ya existe da el mensaje de error: "El usuario talYtal ya existe, no se ha creado". 
+        Crea un script llamado crearUsuario.sh, que reciba por parametros el login de un usuario, su password y su
+        directorio de home. <br>
+        Si el usuario no existe lo crea y muestra por pantalla: "El usuario talYtal se creó correctamente". Si el
+        usuario ya existe da el mensaje de error: "El usuario talYtal ya existe, no se ha creado".
         Recuerda darle permisos a ese usuario sobre sus directorio.
       </p>
       <p>
-        Crea un script llamado compartir.sh que reciba como parametros el nombre de un directorio. El script comprueba si el directorio ya está compartido, en cuyo caso da el siguiente mensaje:
-        "El directorio talYtal ya estaba compartido". Si el directorio no estaba compartido, lo camparte y muestra el mensaje: "Directorio talYtal compartido correctamente"
+        Crea un script llamado compartir.sh que reciba como parametros el nombre de un directorio. El script comprueba
+        si el directorio ya está compartido, en cuyo caso da el siguiente mensaje:
+        "El directorio talYtal ya estaba compartido". Si el directorio no estaba compartido, lo camparte y muestra el
+        mensaje: "Directorio talYtal compartido correctamente"
       </p>
       <p>
-        Crea un script llamado pedirDirectorios.sh que pida al usuario la ruta de 5 directorios y meta esas rutas en un archivo llamado directorios.dat. Una ruta por linea.
+        Crea un script llamado pedirDirectorios.sh que pida al usuario la ruta de 5 directorios y meta esas rutas en un
+        archivo llamado directorios.dat. Una ruta por linea.
       </p>
       <p>
-        Crea un script llamado pedirUsuarios.sh que pida el login de 5 usuarios, su password y su directorio de home. Esos datos los mete en un archivo llamado usuarios.dat. Cada linea
-        del archivo contendrá el login de un usuario, su password y su directorio de home, separados por espacios. 
+        Crea un script llamado pedirUsuarios.sh que pida el login de 5 usuarios, su password y su directorio de home.
+        Esos datos los mete en un archivo llamado usuarios.dat. Cada linea
+        del archivo contendrá el login de un usuario, su password y su directorio de home, separados por espacios.
       </p>
       <p>
         Crea un script llamado cabecera.sh que imprima lo siguiente por pantalla: <br>
-         ++++++++++++++++++++++++++++++++++++ <br>
-         +++ Gestión de usuarios en Linux <br>
-         +++ SMR 2 <br>
-         +++ Tunombre TuPrimerApellido <br>
-         ++++++++++++++++++++++++++++++++++++<br>
+        ++++++++++++++++++++++++++++++++++++ <br>
+        +++ Gestión de usuarios en Linux <br>
+        +++ SMR 2 <br>
+        +++ Tunombre TuPrimerApellido <br>
+        ++++++++++++++++++++++++++++++++++++<br>
 
       </p>
       <p>
@@ -94,9 +101,27 @@
         invoca pedirUsuarios.sh <br>
         usa el script crearDirectorio.sh para crear 5 directorios leyendo el archivo directorios.dat <br>
         usa el sciprt crearUsuario.sh para crear 5 usuarios leyendo el archivo usuarios.dat. <br>
-        [ la salida de los dos anteriores scripts se redirigen a un archivo llamado sucesos.log. Cada linea debe ir acompañada de la hora y el dia ]
+        [ la salida de los dos anteriores scripts se redirigen a un archivo llamado sucesos.log. Cada linea debe ir
+        acompañada de la hora y el dia ]
       </p>
-
+    </article>
+    <article class="ejercicio">
+      <p>
+        En una empresa de software quieren tener un sistema de backup de tal forma que los "home" de los empleados
+        se compriman en .tar, todos los dias a las 6:00 y se copien a un directorio compartido en el servidor. Implementa 
+        la solución usando NFS.
+      </p>
+    </article>
+    <article class="ejercicio">
+      <p>
+        Se ha establecido la siguiente organización en una empresa: el jefe crea un archivo con las tareas de 
+        cada empleado, este archivo consiste en una lista de nombres de archivo que el empleado debe rellear. 
+        Implementa un sistema de tal forma que cuando el empleado inicie sesion, se ejecute un script que lea 
+        el archivo que hay en el servidor para ese usuario concreto y cree en el directorio /home/tareas todos los archivos 
+        indicado en la lista que contiene el archivo del servidor. Antes de crear los archivos hay que borrar lo que 
+        tuviera ese directorio. Implementa 
+        la solución usando NFS.
+      </p>
     </article>
   </section>
 </body>
