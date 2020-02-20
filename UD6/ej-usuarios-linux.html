@@ -108,19 +108,37 @@
     <article class="ejercicio">
       <p>
         En una empresa de software quieren tener un sistema de backup de tal forma que los "home" de los empleados
-        se compriman en .tar, todos los dias a las 6:00 y se copien a un directorio compartido en el servidor. Implementa 
+        se compriman en .tar, todos los dias a las 6:00 y se copien a un directorio compartido en el servidor.
+        Implementa
         la solución usando NFS.
       </p>
     </article>
     <article class="ejercicio">
       <p>
-        Se ha establecido la siguiente organización en una empresa: el jefe crea un archivo con las tareas de 
-        cada empleado, este archivo consiste en una lista de nombres de archivo que el empleado debe rellear. 
-        Implementa un sistema de tal forma que cuando el empleado inicie sesion, se ejecute un script que lea 
-        el archivo que hay en el servidor para ese usuario concreto y cree en el directorio /home/tareas todos los archivos 
-        indicado en la lista que contiene el archivo del servidor. Antes de crear los archivos hay que borrar lo que 
-        tuviera ese directorio. Implementa 
+        Se ha establecido la siguiente organización en una empresa: el jefe crea un archivo con las tareas de
+        cada empleado, este archivo consiste en una lista de nombres de archivo que el empleado debe rellear.
+        Implementa un sistema de tal forma que cuando el empleado inicie sesion, se ejecute un script que lea
+        el archivo que hay en el servidor para ese usuario concreto y cree en el directorio /home/tareas todos los
+        archivos
+        indicados en la lista que contiene el archivo del servidor. Antes de crear los archivos hay que borrar lo que
+        tuviera ese directorio. Implementa
         la solución usando NFS.
+      </p>
+    </article>
+    <article class="ejercicio">
+      <p>
+        Crea un script que haga lo siguiente:
+        <ul>
+          <li>Imprima una cabecera y un menu de las cosas que puede hacer el script. Las opciones son las siguientes:</li>
+          <li>1) Crear un usuario, con un directorio compartido a partir del nombre de usuario.</li>
+          <li>2) Crear una cantidad de usuarios especificada por el usuario, a partir de un nombre de usuario. Se crea 
+            un directorio compartido para cada usuario.
+          </li>
+          <li>3) Borrar un usuario y su directorios compartidos</li>
+          <li>4) Salir</li>
+          <li>El script se ejecuta constantemente hasta que el usuario elija la opción de salida</li>
+          <li>El script crea un archivo de log donde registra todo lo que va haciendo.</li>
+        </ul>
       </p>
     </article>
   </section>
