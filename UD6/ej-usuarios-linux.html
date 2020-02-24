@@ -95,7 +95,7 @@
 
       </p>
       <p>
-        Finalmente crear un scirpt llamado principal.sh que haga lo siguiente: <br>
+        Finalmente crear un script llamado principal.sh que haga lo siguiente: <br>
         invoca a cabecera.sh <br>
         invoca pedirDirectorios.sh <br>
         invoca pedirUsuarios.sh <br>
@@ -111,6 +111,25 @@
         se compriman en .tar, todos los dias a las 6:00 y se copien a un directorio compartido en el servidor.
         Implementa
         la solución usando NFS.
+      </p>
+    </article>
+    <article class="ejercicio">
+      <p> 1. Crea un script que recoja por parametros una IP y cree un archivo de log como este: <br> <br>
+        <i>
+          Maquina: 192.168.1.1 <br>
+          Fecha: lun feb 24 08:27:55 CET 2020 <br>
+          Puertos abiertos: 21,22,80,443. <br>
+          Usuarios registrados: root, diego,pepito. <br>
+          Cantidad de usuarios registrados: 128 <br>
+          Usuarios logueados ahora: diego, pepito <br>
+          Cantidad de usuarios logueados ahora: 2 <br>
+        </i>
+        ( El script debe comprobar si los puertos están abiertos)
+      </p>
+      <p>
+        Crea un archivo con varias IPs por linea y un script que use este archivo y el script anterior para 
+        recoger toda la información. Este script manda el anterior a la IP especificada mediante SCP. Después 
+        lo ejecuta de forma remota mediante expect.
       </p>
     </article>
     <article class="ejercicio">
@@ -142,25 +161,7 @@
         </ul>
       </p>
     </article>
-    <article class="ejercicio">
-      <p> 1. Crea un script que recoja por parametros una IP y cree un archivo de log como este: <br> <br>
-        <i>
-          Maquina: 192.168.1.1 <br>
-          Fecha: lun feb 24 08:27:55 CET 2020 <br>
-          Puertos abiertos: 21,22,80,443. <br>
-          Usuarios registrados: root, diego,pepito. <br>
-          Cantidad de usuarios registrados: 128 <br>
-          Usuarios logueados ahora: diego, pepito <br>
-          Cantidad de usuarios logueados ahora: 2 <br>
-        </i>
-        ( El script debe comprobar si los puertos están abiertos)
-      </p>
-      <p>
-        Crea un archivo con varias IPs por linea y un script que use este archivo y el script anterior para 
-        recoger toda la información. Este script manda el anterior a la IP especificada mediante SCP. Después 
-        lo ejecuta de forma remota mediante expect.
-      </p>
-    </article>
+
   </section>
 </body>
 
