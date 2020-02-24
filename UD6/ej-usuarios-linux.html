@@ -129,9 +129,10 @@
       <p>
         Crea un script que haga lo siguiente:
         <ul>
-          <li>Imprima una cabecera y un menu de las cosas que puede hacer el script. Las opciones son las siguientes:</li>
+          <li>Imprima una cabecera y un menu de las cosas que puede hacer el script. Las opciones son las siguientes:
+          </li>
           <li>1) Crear un usuario, con un directorio compartido a partir del nombre de usuario.</li>
-          <li>2) Crear una cantidad de usuarios especificada por el usuario, a partir de un nombre de usuario. Se crea 
+          <li>2) Crear una cantidad de usuarios especificada por el usuario, a partir de un nombre de usuario. Se crea
             un directorio compartido para cada usuario.
           </li>
           <li>3) Borrar un usuario y su directorios compartidos</li>
@@ -139,6 +140,25 @@
           <li>El script se ejecuta constantemente hasta que el usuario elija la opción de salida</li>
           <li>El script crea un archivo de log donde registra todo lo que va haciendo.</li>
         </ul>
+      </p>
+    </article>
+    <article class="ejercicio">
+      <p> 1. Crea un script que recoja por parametros una IP y cree un archivo de log como este: <br> <br>
+        <i>
+          Maquina: 192.168.1.1 <br>
+          Fecha: lun feb 24 08:27:55 CET 2020 <br>
+          Puertos abiertos: 21,22,80,443. <br>
+          Usuarios registrados: root, diego,pepito. <br>
+          Cantidad de usuarios registrados: 128 <br>
+          Usuarios logueados ahora: diego, pepito <br>
+          Cantidad de usuarios logueados ahora: 2 <br>
+        </i>
+        ( El script debe comprobar si los puertos están abiertos)
+      </p>
+      <p>
+        Crea un archivo con varias IPs por linea y un script que use este archivo y el script anterior para 
+        recoger toda la información. Este script manda el anterior a la IP especificada mediante SCP. Después 
+        lo ejecuta de forma remota mediante expect.
       </p>
     </article>
   </section>
